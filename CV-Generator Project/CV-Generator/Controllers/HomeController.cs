@@ -26,5 +26,10 @@ namespace CV_Generator.Controllers
 
             return View();
         }
+
+        public ActionResult CreateCurriculumVitae()
+        {
+            return View();
+        }
     }
 }
