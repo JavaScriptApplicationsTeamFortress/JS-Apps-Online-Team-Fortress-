@@ -235,6 +235,7 @@
     <Content Include="images\social\yahoo1.png" />
     <Content Include="images\social\youtube.png" />
     <Content Include="images\social\youtube1.png" />
+    <Content Include="Scripts\assets - Copy.js" />
     <Content Include="Scripts\assets.js" />
     <Content Include="Scripts\background.js" />
     <Content Include="Scripts\bootstrap.js" />
