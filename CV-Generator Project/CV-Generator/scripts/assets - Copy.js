@@ -93,7 +93,7 @@ var Assets = (function(){
 
         return motivationalLetter;
     })(document);
-	
+})();
 /*
 	assets.personalInformation = [{
 	    name: 'First name',
