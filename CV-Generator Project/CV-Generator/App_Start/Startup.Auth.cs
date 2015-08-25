@@ -54,9 +54,9 @@ namespace CV_Generator
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1494964027469994",
+               appSecret: "22289a8e5d8783764a7c2fddcf66bd96");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

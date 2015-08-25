@@ -10,6 +10,11 @@ namespace CV_Generator.Controllers
     {
         public ActionResult Index()
         {
+            if (!IsLogged())
+            {
+                return RedirectToAction("Login", "Account", "Test");
+            }
+
             return View();
         }
 
@@ -30,6 +35,11 @@ namespace CV_Generator.Controllers
         public ActionResult CreateCurriculumVitae()
         {
             return View();
+        }
+
+        private bool IsLogged()
+        {
+            return User.Identity != null && User.Identity.IsAuthenticated;
         }
     }
 }
