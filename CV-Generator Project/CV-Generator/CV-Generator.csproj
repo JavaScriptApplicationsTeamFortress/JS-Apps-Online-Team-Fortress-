@@ -251,6 +251,12 @@
     <Content Include="Scripts\knockout-3.3.0.debug.js" />
     <Content Include="Scripts\knockout-3.3.0.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\Model\curriculum-vitae.js" />
+    <Content Include="Scripts\Model\driving-licences.js" />
+    <Content Include="Scripts\Model\education.js" />
+    <Content Include="Scripts\Model\personal-information.js" />
+    <Content Include="Scripts\Model\skills.js" />
+    <Content Include="Scripts\Model\work-experience.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
