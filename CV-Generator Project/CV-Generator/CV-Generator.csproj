@@ -254,6 +254,7 @@
     <Content Include="Scripts\Model\curriculum-vitae.js" />
     <Content Include="Scripts\Model\driving-licences.js" />
     <Content Include="Scripts\Model\education.js" />
+    <Content Include="Scripts\Model\languages.js" />
     <Content Include="Scripts\Model\personal-information.js" />
     <Content Include="Scripts\Model\skills.js" />
     <Content Include="Scripts\Model\work-experience.js" />
