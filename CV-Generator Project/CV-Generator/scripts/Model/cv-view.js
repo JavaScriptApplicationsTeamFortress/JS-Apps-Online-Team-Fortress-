@@ -56,12 +56,13 @@
             .attr("id", "lable-" + fields[i].id)
             .attr("name", "lable" + i)
             .attr("value", fields[i].name)
-            .appendTo("#person-info");
+            .appendTo(wrapper);
 
         $("<input type='text' value='' />")
             .attr("id", fields[i].id)
             .attr("name", fields[i].name)
-            .appendTo("#person-info");
+            .attr("placeholder", fields[i].name)
+            .appendTo(wrapper);
 
         $('<br/>')
             .appendTo(wrapper);
