@@ -106,25 +106,19 @@
 
         if (fields[i].id === 'gender') {
 
-            $("<input type='radio' value='male'/>Male")
+            $("<label for=" + fields[i].id + " class='btn btn-info active'/><input type='radio' value='male'/>")
                 .attr("id", fields[i].id)
                 .attr("class", "radio")
                 .attr("name", "sex")
-                .attr("minlength", minLength)
-                .attr("maxlength", maxLength)
-                // .attr("value", "male")
-                .attr("check", "checked")
-                .html("Male")
+                .attr("checked", "checked")
+                .html(" Male")
                 // .attr("required data-val-required", "Field first name is required.")
                 .appendTo('fieldset');
-            $("<input type='radio' value='female'/>")
+            $("<label for=" + fields[i].id + " class='btn btn-info'/><input type='radio' value='female'/>")
                .attr("id", fields[i].id)
                .attr("class", "radio")
                .attr("name", "sex")
-               .attr("minlength", minLength)
-               .attr("maxlength", maxLength)
-               // .attr("value", "female")
-               //.html("Female")
+               .html(" Female")
                // .attr("required data-val-required", "Field first name is required.")
                .appendTo('fieldset');
             continue;
@@ -139,10 +133,5 @@
             .attr("maxlength", maxLength)
             // .attr("required data-val-required", "Field first name is required.")
             .appendTo('fieldset');
-
-        //$('<br/>')
-        //    .appendTo(form);
-        //$('<br/>')
-        //    .appendTo(form);
     }
 });

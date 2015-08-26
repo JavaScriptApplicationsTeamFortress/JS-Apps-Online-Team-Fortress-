@@ -20,8 +20,6 @@ namespace CV_Generator.Controllers
 
         public ActionResult CreateCV()
         {
-            ViewBag.Message = "Template for create CV.";
-
             return View();
         }
 
