@@ -59,8 +59,8 @@
         .attr("id", "cv-form")
         .attr("class", "form-horizontal")
         .appendTo(wrapper);
-    
 
+   form.append('<fieldset><legend>Person Information</legend></fieldset>');
 
 
     for (i = 0; i < len; i += 1) {
@@ -68,17 +68,17 @@
             .attr("id", "lable-" + fields[i].id)
             .attr("name", "lable" + i)
             .attr("value", fields[i].name)
-            .appendTo(form);
+            .appendTo('fieldset');
 
         $("<input type='text' value='' />")
             .attr("id", fields[i].id)
             .attr("name", fields[i].name)
             .attr("placeholder", fields[i].name)
-            .appendTo(form);
+            .appendTo('fieldset');
 
-        $('<br/>')
-            .appendTo(form);
-        $('<br/>')
-            .appendTo(form);
+        //$('<br/>')
+        //    .appendTo(form);
+        //$('<br/>')
+        //    .appendTo(form);
     }
 });
