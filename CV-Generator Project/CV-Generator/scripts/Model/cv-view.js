@@ -7,7 +7,6 @@
         wrapper,
         minLength,
         maxLength,
-        buttonGender,
         CONSTANTS = {
             MIN_LENGTH_NAME: 3,
             MAX_LENGTH_NAME: 10,
@@ -66,8 +65,7 @@
             }, {
                 name: 'QR code',
                 id: 'qr',
-                data: null
-            }
+                data: null            }
         ];
 
     len = fields.length;
@@ -108,25 +106,25 @@
 
         if (fields[i].id === 'gender') {
 
-            $("<input type='radio' value='' />")
+            $("<input type='radio' value='male'/>Male")
                 .attr("id", fields[i].id)
-                .attr("class", "form-control")
+                .attr("class", "radio")
                 .attr("name", "sex")
                 .attr("minlength", minLength)
                 .attr("maxlength", maxLength)
-                .attr("value", "male")
-                .attr("checke", "macheckedle")
+                // .attr("value", "male")
+                .attr("check", "checked")
                 .html("Male")
                 // .attr("required data-val-required", "Field first name is required.")
                 .appendTo('fieldset');
-            $("<input type='radio' value='' />")
+            $("<input type='radio' value='female'/>")
                .attr("id", fields[i].id)
-               .attr("class", "form-control")
+               .attr("class", "radio")
                .attr("name", "sex")
                .attr("minlength", minLength)
                .attr("maxlength", maxLength)
-               .attr("value", "female")
-               .html("Female")
+               // .attr("value", "female")
+               //.html("Female")
                // .attr("required data-val-required", "Field first name is required.")
                .appendTo('fieldset');
             continue;
