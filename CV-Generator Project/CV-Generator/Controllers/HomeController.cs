@@ -18,6 +18,13 @@ namespace CV_Generator.Controllers
             return View();
         }
 
+        public ActionResult CreateCV()
+        {
+            ViewBag.Message = "Template for create CV.";
+
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
