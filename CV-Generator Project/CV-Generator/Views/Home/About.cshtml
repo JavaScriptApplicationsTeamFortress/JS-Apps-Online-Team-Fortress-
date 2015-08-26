@@ -1,7 +1,257 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Add CV";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Dashboard</h1>
+            <div class="alert alert-dismissable alert-warning">
+                <button data-dismiss="alert" class="close" type="button">&times;</button>
+                Welcome to the CV section!
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12">
+            <h1> Personal Info: </h1>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#personalInformation">
+                Change
+            </button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="personalInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fill your personal information</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Input your names</label>
+                            <input class="form-control" placeholder="Your names">
+                        </div>
+                        <div class="form-group">
+                            <label>Street</label>
+                            <input class="form-control" placeholder="Street name and number">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input class="form-control" placeholder="Your country">
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input class="form-control" placeholder="example@mail.com">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
+    </div>
+    <br>
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12">
+            <h1> Еducation and training: </h1>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#educationAndTraining">
+                Change
+            </button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="educationAndTraining" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Еducation and training</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>From data</label>
+                            <input class="form-control" placeholder="from data">
+                        </div>
+                        <div class="form-group">
+                            <label>To data</label>
+                            <input class="form-control" placeholder="To data">
+                        </div>
+                        <div class="form-group">
+                            <label>Qualification</label>
+                            <input class="form-control" placeholder="your specialty">
+                        </div>
+                        <div class="form-group">
+                            <label>Your School name</label>
+                            <input class="form-control" placeholder="enter name of your school">
+                        </div>
+                        <div class="form-group">
+                            <label>Additional information about your shcool</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
+    </div>
+    <br>
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12">
+            <h1> Work experience: </h1>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#educationAndTraining"> Change </button>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="educationAndTraining" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Working experience</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>From data</label>
+                        <input class="form-control" placeholder="from data">
+                    </div>
+                    <div class="form-group">
+                        <label>To data</label>
+                        <input class="form-control" placeholder="To data">
+                    </div>
+                    <div class="form-group">
+                        <label>Employer</label>
+                        <input class="form-control" placeholder="employer">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional information about your responsibility</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+    <br>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-primary"> Personal Skills </h1>
+
+        </div>
+    </div>
+    <br>
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12">
+            <h1> Mother Language: </h1>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#motherLanguage"> Change </button>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="motherLanguage" tabindex="-1" role="dialog" aria-labelledby="motherLanguage">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Mother Language</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Mother Language</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+    <br>
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12">
+            <h1> Other Languages: </h1>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#allLanguage"> Change </button>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="allLanguage" tabindex="-1" role="dialog" aria-labelledby="allLanguage">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Fll all your languages</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>All Languages</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+    <br>
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12">
+            <h1> Skills: </h1>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#skills"> Change </button>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="skills" tabindex="-1" role="dialog" aria-labelledby="motherLanguage">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Fill your skills</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Organization Skills</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Communication skills</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Digital skills</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+</div>
+<button type="button" class="btn btn-primary center-block">Save changes</button>
+    </div>
+    </div>
+<!-- /#wrapper -->
