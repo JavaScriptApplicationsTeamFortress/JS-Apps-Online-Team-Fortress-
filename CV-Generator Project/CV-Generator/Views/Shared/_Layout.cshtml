@@ -22,7 +22,6 @@
                 </button>
                 @Html.ActionLink("App name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-<<<<<<< HEAD
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -30,7 +29,9 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Curriculum vitae", "CreateCurriculumVitae", "Home")</li>
-=======
+                </ul>
+            </div>
+
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul id="active" class="nav navbar-nav side-nav">
                     <li class="selected">@Html.ActionLink("Home", "Index", "Home") </li>
@@ -38,12 +39,11 @@
                     <li class="">@Html.ActionLink("Add Cover Letter", "CoverLetter", "Home")</li>
                     <li class=""><a href="#"><i class="fa fa-bullseye"></i> Preview Document</a></li>
                     <li class=""><a href="#"><i class="fa fa-bullseye"></i> Export Document</a></li>
->>>>>>> responsiveDesign
                 </ul>
-                
-                    @Html.Partial("_LoginPartial")
-                    
-                
+
+                @Html.Partial("_LoginPartial")
+
+
             </div>
         </nav>
         <div class="container body-content">
@@ -53,9 +53,9 @@
                 <p>&copy; @DateTime.Now.Year - My ASP.NET Application1</p>
             </footer>
         </div>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
