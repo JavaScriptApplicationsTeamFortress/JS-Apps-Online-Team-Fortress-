@@ -1,4 +1,6 @@
 ﻿$(function () {
+    "use strict";
+
     var i,
         len,
         fields = [{
@@ -46,27 +48,37 @@
             id: 'qr',
             data: null
         }],
-        wrraper;
+        wrapper,
+            form;
 
     len = fields.length;
     wrapper = $("#person-info");
+   form = $('<form/>')
+        .attr("method", "post")
+        .attr("role", "form")
+        .attr("id", "cv-form")
+        .attr("class", "form-horizontal")
+        .appendTo(wrapper);
+    
+
+
 
     for (i = 0; i < len; i += 1) {
         $("<lable for=" + fields[i].id + " value='' >" + fields[i].name + " </lable>")
             .attr("id", "lable-" + fields[i].id)
             .attr("name", "lable" + i)
             .attr("value", fields[i].name)
-            .appendTo(wrapper);
+            .appendTo(form);
 
         $("<input type='text' value='' />")
             .attr("id", fields[i].id)
             .attr("name", fields[i].name)
             .attr("placeholder", fields[i].name)
-            .appendTo(wrapper);
+            .appendTo(form);
 
         $('<br/>')
-            .appendTo(wrapper);
+            .appendTo(form);
         $('<br/>')
-            .appendTo(wrapper);
+            .appendTo(form);
     }
 });
