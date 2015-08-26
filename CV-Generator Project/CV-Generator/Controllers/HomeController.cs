@@ -32,6 +32,20 @@ namespace CV_Generator.Controllers
             return View();
         }
 
+        public ActionResult Add()
+        {
+            ViewBag.Message = "Your CV";
+
+            return View();
+        }
+
+        public ActionResult CoverLetter()
+        {
+            ViewBag.Message = "Your Cover Letter";
+
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
