@@ -253,6 +253,7 @@
     <Content Include="Scripts\knockout-3.3.0.debug.js" />
     <Content Include="Scripts\knockout-3.3.0.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\Model\coverLetter-view.js" />
     <Content Include="Scripts\Model\curriculum-vitae.js" />
     <Content Include="Scripts\Model\cv-view.js" />
     <Content Include="Scripts\Model\driving-licences.js" />
