@@ -22,10 +22,25 @@
         }],
         wrraper;
 
-    var coverLetterForm = $("#cover-letter-form")
+    len = fields.length;
+    wrapper = $("#cover-letter-form");
 
-    $("#target").on("submit", function(event) {
-        event.preventDefault();
-    });
-    });
+    for (i = 0; i < len; i += 1) {
+        $("<label for=" + fields[i].id + " value='' >" + fields[i].name + " </label>")
+            .attr("id", "label-" + fields[i].id)
+            .attr("name", "label" + i)
+            .attr("value", fields[i].name)
+            .appendTo(wrapper);
+
+        $("<input type='text' value='' />")
+            .attr("id", fields[i].id)
+            .attr("name", fields[i].name)
+            .attr("placeholder", fields[i].name)
+            .appendTo(wrapper);
+
+        $('<br/>')
+            .appendTo(wrapper);
+        $('<br/>')
+            .appendTo(wrapper);
+    }
 });
