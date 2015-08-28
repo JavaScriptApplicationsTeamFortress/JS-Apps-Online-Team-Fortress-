@@ -1,45 +1,91 @@
 ﻿@{
     ViewBag.Title = "Add Cover Letter";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<!DOCTYPE html>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Dashboard</h1>
+            <div class="alert alert-dismissable alert-warning">
+                <button data-dismiss="alert" class="close" type="button">&times;</button>
+                Welcome to the Cover Letter section!
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <form method="post" role="form" id="cover-letter-form" class="form-horizontal">
-        <fieldset>
-            <legend>Personal Information</legend>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12">
+            <h1> Personal Info: </h1>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#personalInformation">
+                Change
+            </button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="personalInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fill in your personal information</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Input your names</label>
+                            <input class="form-control" placeholder="Your names">
+                        </div>
+                        <div class="form-group">
+                            <label>Street</label>
+                            <input class="form-control" placeholder="Street name and number">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input class="form-control" placeholder="Your country">
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input class="form-control" placeholder="example@mail.com">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
+    </div>
+    <br>
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12">
+            <h1> Text of Cover Letter </h1>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#educationAndTraining">
+                Change
+            </button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="educationAndTraining" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Text of Cover Letter</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Enter your letter here</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
 
-            <label for="first-name">First name</label>
-            <input type="text" id="first-name" class="form-control" name="first-name" minlength="3" maxlength="20" required data-val-required="Field first name is required." data-val-first-name="First name field length must be between 3 and 20 characters.">
-            <span class="text-danger" data-valmsg-for="first-name" data-valmsg-replace="true"></span> @*TODO: fix error messages*@
-
-            <label for="last-name">Last name</label>
-            <input type="text" id="last-name" class="form-control" name="last-name" minlength="3" maxlength="20" required data-val-required="Field last name is required." data-val-last-name="Last name field length must be between 3 and 20 characters.">
-
-            <label for="telephone">Telephone</label>
-            <input type="text" id="telephone" class="form-control" name="telephone" minlength="10" maxlength="12" data-val-first-name="Telephone field length must be between 10 and 12 characters.">
-
-            <label for="address">Address</label>
-            <input type="text" id="address" class="form-control" name="address" minlength="10" maxlength="50" data-val-first-name="Address field length must be between 10 and 50 characters.">
-
-        </fieldset>
-
-        <fieldset>
-            <legend>Cover Letter Text</legend>
-
-            <label for="cover-letter-text">Cover Letter Text</label>
-            <input type="text" id="cover-letter-text" class="form-control" name="cover-letter-text" style="height: 200px; overflow: scroll; overflow-y: scroll; -webkit-writing-mode: none" minlength="100" maxlength="5000" required data-val-required="Field text of cover letter is required" data-val-first-name="Cover letter text field length must be between 100 and 5000 characters.">
-           
-
-            <button id="cover-letter-submit" class="btn btn-default">Submit</button>
-        </fieldset>
-    </form>
-</body>
-</html>
+        <button type="button" class="btn btn-primary center-block">Save changes</button>
+</div>
+</div>
