@@ -308,6 +308,7 @@
     <Content Include="Views\Home\CreateCV.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\CoverLetter.cshtml" />
+    <Content Include="Views\Home\PreviewDocument.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
