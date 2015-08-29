@@ -7,12 +7,18 @@ window.onload = (function () {
         cvSubmitButton.addEventListener("click", function (event) {
             event.preventDefault();
 
-            if (!$("#cv-form").valid()) {
-                alert("form data is not valid");
-                return;
-            }
+            //if (!$("#cv-form").valid()) {
+            //    alert("form data is not valid");
+            //    return;
+            //}
 
-            alert("form data is valid");
+            //alert("form data is valid");
+
+            var koModel = Knockout.createModel(CurriculumVitae);
+            ko.applyBindings(koModel);
+
         }, false);
+
+
     }
 }());

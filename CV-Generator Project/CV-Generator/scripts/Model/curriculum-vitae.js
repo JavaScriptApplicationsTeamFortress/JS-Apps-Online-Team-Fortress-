@@ -12,7 +12,10 @@
         drivingLicences: [],
         additionalInformation: null //additional information object
     };
-})();
+
+    return curriculumVitae;
+
+})(CurriculumVitae);
 
 var AdditionalInformation = (function () {
     "use strict";
