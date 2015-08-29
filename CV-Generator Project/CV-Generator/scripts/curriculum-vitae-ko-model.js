@@ -5,82 +5,39 @@
 
     //convert object to observable and returns it
     knockout.wrapObject = function (object) {
-        var keys,
-            observableObject;
-
-        if (Type.isPrimitive(object) || Type.isObject(object)) {
-            return ko.observable(object);
-        }
-
-        if (Type.isArray(object)) {
-            return knockout.wrapArray(object);
-        }
-
-        return ko.observable();
+        //if object is primitive - return ko.observable
+        //if object is array - wrapArray
+        //if object is not primitive - get keys and values and make them observable or observableArrays
     }
 
-    //convert array to observableArray of observable objects and returns it
+    //convert array to observableArray of observable objects
     knockout.wrapArray = function (array) {
-        var keys,
-            object,
-            observable,
-            observableArray;
 
-        observableArray = ko.observableArray();
-
-        _.each(array, function (item, index, array) {
-            observable = !Type.isArray(item) ? knockout.wrapObject(item) : knockout.wrapArray(item);
-
-            observableArray.push(observable);
+        _.each(array, function () {
         });
-
-        return observableArray;
     }
 
     //by given object creates ko model
     knockout.createModel = function (model) {
-        var keys,
-            koObject,
-            object,
-            observable;
-
-        keys = Object.keys(model);
-        koObject = {};
-
-        _.each(keys, function (key, index, keys) {
-            object = model[key];
-
-            if (!Type.isArray(object)) {
-                observable = knockout.wrapObject(object);
-            }
-            else {
-                observable = knockout.wrapArray(object);
-            }
-
-            koObject[key] = observable;
-        });
-
-        return koObject;
     }
 
     return {
-        wrapObject: knockout.wrapObject,
-        wrapArray: knockout.wrapArray,
-        createModel: knockout.createModel
     };
 })();
+
+
+Object.prototype.getType = function () {
+    var type = typeof this;
+}
+
 
 var Type = (function () {
     "use strict";
 
     var type = {};
-
+    
     type.getType = function (object) {
         var objectType = typeof object;
-
-        if (Array.isArray(object)) {
-            return "array";
-        }
 
         if (objectType === "number") {
             return "number";
@@ -108,6 +65,10 @@ var Type = (function () {
 
         if (objectType === "function") {
             return "function";
+        }
+       
+        if (Array.isArray(object)) {
+            return "array";
         }
     }
 
