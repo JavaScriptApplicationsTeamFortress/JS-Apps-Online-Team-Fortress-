@@ -1,0 +1,25 @@
+Ако превю без Ajax се връща View, ако е Ajax PartialView с модел от базата данни.
+
+В 
+        [HttpPost]
+        [AjaxOnly]
+        public ActionResult CreateCV(object cv)
+        {
+            throw new NotImplementedException();
+        }
+тук се вика след субмит. И е само с Ajax заявка.
+
+Requment:
+jQuery - need!
+At least 3 modules - need!
+Unit tests - need!
+Using Mocha, Chai and SinonJS - need!
+localStorage - need!
+Share status to Facebook, Google+, Twitter, etc... - need
+Pageing - need!
+
+
+
+
+
+

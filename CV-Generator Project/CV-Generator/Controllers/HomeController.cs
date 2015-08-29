@@ -25,49 +25,30 @@ namespace CV_Generator.Controllers
             return View();
         }
 
-        public ActionResult About()
+        [HttpPost]
+        [AjaxOnly]
+        public ActionResult CreateCV(object cv)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            throw new NotImplementedException();
         }
 
-        public ActionResult Add()
+        [HttpPost]
+        public ActionResult View(int id)
         {
-            ViewBag.Message = "Your CV";
-
-            return View();
-        }
-
-        public ActionResult CoverLetter()
-        {
-            ViewBag.Message = "Your Cover Letter";
-
-            return View();
-        }
-
-        public ActionResult PreviewDocument()
-        {
-            ViewBag.Message = "See all your documents";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public ActionResult CreateCurriculumVitae()
-        {
-            return View();
+            throw new NotImplementedException();
         }
 
         private bool IsLogged()
         {
             return User.Identity != null && User.Identity.IsAuthenticated;
+        }
+    }
+
+    public class AjaxOnlyAttribute : ActionMethodSelectorAttribute
+    {
+        public override bool IsValidForRequest(ControllerContext controllerContext, System.Reflection.MethodInfo methodInfo)
+        {
+            return controllerContext.RequestContext.HttpContext.Request.IsAjaxRequest();
         }
     }
 }

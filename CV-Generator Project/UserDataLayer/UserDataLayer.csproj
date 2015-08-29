@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="ApplicationUserWrapper.cs" />
+    <Compile Include="ClaimsIdentityWrapper.cs" />
+    <Compile Include="ClaimWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
