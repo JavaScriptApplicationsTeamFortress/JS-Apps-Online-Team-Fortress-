@@ -184,8 +184,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\local.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -255,13 +253,10 @@
     <Content Include="Scripts\knockout-3.3.0.debug.js" />
     <Content Include="Scripts\knockout-3.3.0.js" />
     <Content Include="Scripts\main.js" />
-    <Content Include="Scripts\Model\coverLetter-view.js" />
-    <Content Include="Scripts\Model\cover-letter.js" />
     <Content Include="Scripts\Model\curriculum-vitae.js" />
     <Content Include="Scripts\Model\cv-view.js" />
     <Content Include="Scripts\Model\driving-licences.js" />
     <Content Include="Scripts\Model\education.js" />
-    <Content Include="Scripts\Model\extraFormGenerator.js" />
     <Content Include="Scripts\Model\languages.js" />
     <Content Include="Scripts\Model\personal-information.js" />
     <Content Include="Scripts\Model\skills.js" />
@@ -311,7 +306,6 @@
     <Content Include="Views\Home\CreateCV.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\CoverLetter.cshtml" />
-    <Content Include="Views\Home\PreviewDocument.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -319,12 +313,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UserDataLayer\UserDataLayer.csproj">
-      <Project>{c1b01e80-e925-40ed-bfff-506507da1fbc}</Project>
-      <Name>UserDataLayer</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

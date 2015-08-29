@@ -46,13 +46,6 @@ namespace CV_Generator.Controllers
             return View();
         }
 
-        public ActionResult PreviewDocument()
-        {
-            ViewBag.Message = "See all your documents";
-
-            return View();
-        }
-
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
