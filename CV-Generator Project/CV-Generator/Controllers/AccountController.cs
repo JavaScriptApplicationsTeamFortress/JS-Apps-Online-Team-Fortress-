@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CV_Generator.Models;
+using UserDataLayer;
 
 namespace CV_Generator.Controllers
 {

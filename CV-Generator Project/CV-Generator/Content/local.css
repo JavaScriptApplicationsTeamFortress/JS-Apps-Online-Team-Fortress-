@@ -6276,3 +6276,6 @@ table.tablesorter thead tr th:hover {
                     right: auto;
                 }
         }
+        #aditionalInfo h1 {
+            display:inline-block;
+        }

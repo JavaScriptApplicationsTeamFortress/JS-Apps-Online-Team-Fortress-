@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using CV_Generator.Models;
+using UserDataLayer;
 
 namespace CV_Generator
 {

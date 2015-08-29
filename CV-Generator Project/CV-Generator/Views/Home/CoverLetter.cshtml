@@ -1,20 +1,20 @@
 ﻿@{
-    ViewBag.Title = "Cover Letter";
+    ViewBag.Title = "Add Cover Letter";
 }
+
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
             <h1>Dashboard</h1>
             <div class="alert alert-dismissable alert-warning">
                 <button data-dismiss="alert" class="close" type="button">&times;</button>
-              @ViewBag.Title
-
+                Welcome to the Cover Letter section!
             </div>
         </div>
     </div>
     <div class="row" id="aditionalInfo">
         <div class="col-lg-12">
-            <h1> Personal Info: </h1>
+            <h1> Personal Information: </h1>
             <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#personalInformation">
                 Change
             </button>
@@ -25,7 +25,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Fill your personal information</h4>
+                        <h4 class="modal-title" id="myModalLabel">Fill in your personal information</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -43,7 +43,6 @@
                         <div class="form-group">
                             <label>E-mail</label>
                             <input class="form-control" placeholder="example@mail.com">
-                            <button type="button" class="btn btn-primary">Add extra email</button>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -55,27 +54,26 @@
         </div>
         <!-- end modal -->
     </div>
+    <br>
     <div class="row" id="aditionalInfo">
         <div class="col-lg-12">
-            <h1>Main Content: </h1>
-            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#mainContent">
+            <h1> Text of Cover Letter </h1>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#cl-text">
                 Change
             </button>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="mainContent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="cl-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Fill your personal information</h4>
+                        <h4 class="modal-title" id="myModalLabel">Text of Cover Letter</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Fill content</label>
+                            <label>Enter your letter here</label>
                             <textarea class="form-control" rows="3"></textarea>
-
-                            <button type="button" class="btn btn-primary">Add other content</button>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -86,6 +84,7 @@
             </div>
         </div>
         <!-- end modal -->
+
         <button type="button" class="btn btn-primary center-block">Save changes</button>
-    </div>
+</div>
 </div>
