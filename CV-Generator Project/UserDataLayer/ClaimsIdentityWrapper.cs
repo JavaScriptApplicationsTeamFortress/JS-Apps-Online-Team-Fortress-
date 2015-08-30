@@ -11,7 +11,6 @@ namespace UserDataLayer
     {
         public ClaimsIdentityWrapper()
         {
-
         }
 
         public ClaimsIdentityWrapper(ClaimsIdentity identity)
@@ -37,7 +36,7 @@ namespace UserDataLayer
         {
             var claims = ClaimsIdentityWrappers.Select(x => x.Convert()).ToList();
 
-            ClaimsIdentity identity = new ClaimsIdentity(claims, this.AuthenticationType,this.NameClaimType,this.RoleClaimType);
+            ClaimsIdentity identity = new ClaimsIdentity(claims, this.AuthenticationType, this.NameClaimType, this.RoleClaimType);
             identity.Label = this.Label;
 
             return identity;

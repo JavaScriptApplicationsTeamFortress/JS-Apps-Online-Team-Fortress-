@@ -28,7 +28,7 @@ namespace UserDataLayer
 
         public Claim Convert()
         {
-            var claim = new Claim(Type,Value,ValueType,Issuer,OriginalIssuer);
+            var claim = new Claim(this.Type, this.Value, this.ValueType, this.Issuer, this.OriginalIssuer);
 
             return claim;
         }

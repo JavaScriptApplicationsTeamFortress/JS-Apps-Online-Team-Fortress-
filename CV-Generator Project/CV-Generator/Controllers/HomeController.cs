@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml.Xsl;
 
 namespace CV_Generator.Controllers
 {
@@ -20,9 +21,14 @@ namespace CV_Generator.Controllers
 
         public ActionResult CreateCV()
         {
+            if (!IsLogged())
+            {
+                return RedirectToAction("Login", "Account", "Test");
+            }
+
             ViewBag.Message = "Template for create CV.";
 
-            return View();
+            return View("Add");
         }
 
         [HttpPost]
@@ -33,7 +39,7 @@ namespace CV_Generator.Controllers
         }
 
         [HttpPost]
-        public ActionResult View(int id)
+        public ActionResult View(int? id)
         {
             throw new NotImplementedException();
         }
