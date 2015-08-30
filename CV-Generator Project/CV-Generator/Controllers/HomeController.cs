@@ -41,7 +41,7 @@ namespace CV_Generator.Controllers
         [HttpPost]
         public ActionResult View(int? id)
         {
-            throw new NotImplementedException();
+            return View("PreviewDocument");
         }
 
         private bool IsLogged()
