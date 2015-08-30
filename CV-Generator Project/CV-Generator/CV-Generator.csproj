@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MochaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,6 +187,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\local.css" />
+    <Content Include="Content\mocha.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -242,6 +244,7 @@
     <Content Include="Scripts\background.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chai.js" />
     <Content Include="Scripts\curriculum-vitae-ko-model.js" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
@@ -270,6 +273,15 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\sinon-1.9.1.js" />
+    <Content Include="Scripts\specs\application\calculator.js" />
+    <Content Include="Scripts\specs\bdd\chai-jquery.js" />
+    <Content Include="Scripts\specs\bdd\chai.js" />
+    <Content Include="Scripts\specs\bdd\fixtures.js" />
+    <Content Include="Scripts\specs\bdd\mocha.js" />
+    <Content Include="Scripts\specs\bdd\sinon-chai.js" />
+    <Content Include="Scripts\specs\bdd\sinon.js" />
+    <Content Include="Scripts\specs\fixtures\readme.txt" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\validator.js" />
     <Content Include="Scripts\_references.js" />
@@ -312,6 +324,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\CoverLetter.cshtml" />
     <Content Include="Views\Home\PreviewDocument.cshtml" />
+    <Content Include="Views\Mocha\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
