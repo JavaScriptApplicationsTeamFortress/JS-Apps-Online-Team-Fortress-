@@ -12,7 +12,7 @@
 Requment:
 jQuery - need!
 At least 3 modules - need!
-Unit tests - need!
+- Unit tests - need! -Todor
 Using Mocha, Chai and SinonJS - need!
 localStorage - need!
 Share status to Facebook, Google+, Twitter, etc... - need
