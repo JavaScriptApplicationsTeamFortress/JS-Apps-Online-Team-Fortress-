@@ -1,13 +1,13 @@
-Ако превю без Ajax се връща View, ако е Ajax PartialView с модел от базата данни.
+РђРєРѕ РїСЂРµРІСЋ Р±РµР· Ajax СЃРµ РІСЂСЉС‰Р° View, Р°РєРѕ Рµ Ajax PartialView СЃ РјРѕРґРµР» РѕС‚ Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё.
 
-В 
+Р’ 
         [HttpPost]
         [AjaxOnly]
         public ActionResult CreateCV(object cv)
         {
             throw new NotImplementedException();
         }
-тук се вика след субмит. И е само с Ajax заявка.
+С‚СѓРє СЃРµ РІРёРєР° СЃР»РµРґ СЃСѓР±РјРёС‚. Р Рµ СЃР°РјРѕ СЃ Ajax Р·Р°СЏРІРєР°.
 
 Requment:
 jQuery - need!
