@@ -61,6 +61,9 @@
     <Compile Include="ApplicationUserWrapper.cs" />
     <Compile Include="ClaimsIdentityWrapper.cs" />
     <Compile Include="ClaimWrapper.cs" />
+    <Compile Include="IdentityUserClaimWrapper.cs" />
+    <Compile Include="IdentityUserLoginWrapper.cs" />
+    <Compile Include="IdentityUserRoleWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
