@@ -62,6 +62,23 @@
         return koObject;
     }
 
+    knockout.addObservableToModel = function (model, observableName, object) {
+        var observable;
+
+        if (Type.isArray(object)) {
+            observable = knockout.wrapArray(object);
+        }
+        else {
+            observable = knockout.wrapObject();
+        }
+
+        model[observableName] = observable;
+    }
+
+    knockout.addFunctionToModel = function (model, functionName, functionHandler) {
+        model[functionName] = functionHandler;
+    }
+
     return {
         wrapObject: knockout.wrapObject,
         wrapArray: knockout.wrapArray,

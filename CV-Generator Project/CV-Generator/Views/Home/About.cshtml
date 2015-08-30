@@ -11,18 +11,88 @@
             <div class="alert alert-dismissable alert-warning">
                 <button data-dismiss="alert" class="close" type="button">&times;</button>
                 Welcome to the CV section!
-
             </div>
         </div>
     </div>
 
     <div class="row" id="aditionalInfo">
-        <div class="col-lg-12">
+        <div class="col-lg-12" data-bind="visible: personalInformation().firstName == undefined">
+            <h1>No personal information added.</h1>
+        </div>
+
+        <div class="col-lg-12" data-bind="visible: personalInformation().firstName != undefined">
             <h1> Personal Info: </h1>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">First name: </label>
+                    <label class="col-lg-4" data-bind="text: personalInformation().firstName"></label>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Surname: </label>
+                    <label class="col-lg-4" data-bind="text: personalInformation().middleName"></label>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Family name: </label>
+                    <label class="col-lg-4" data-bind="text: personalInformation().lastName"></label>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Date of birth</label>
+                    <label class="col-lg-4" data-bind="text: personalInformation().dateOfBirth"></label>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Age</label>
+                    <label class="col-lg-4" data-bind="text: personalInformation().age"></label>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">E-mail</label>
+                    <label class="col-lg-4" data-bind="text: personalInformation().email"></label>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Gender</label>
+                    <label class="col-lg-2" data-bind="text: personalInformation().gender"></label>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Phone number</label>
+                    <label class="col-lg-4" data-bind="text: personalInformation().phoneNumber"></label>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Street</label>
+                    <label class="col-lg-6" data-bind="text: personalInformation().address"></label>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Nationality</label>
+                    <label class="col-lg-4" data-bind="text: personalInformation().nationality"></label>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Country</label>
+                    <label class="col-lg-4" data-bind="text: personalInformation().country"></label>
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#personalInformation">
                 Change
             </button>
         </div>
+
         <!-- Modal -->
         <div class="modal fade" id="personalInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -33,21 +103,54 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Input your names</label>
-                            <input class="form-control" placeholder="Your names">
+                            <label>First name</label>
+                            <input class="form-control" placeholder="Your first name" data-bind="value: personalInformation().firstName" required>
                         </div>
                         <div class="form-group">
-                            <label>Street</label>
-                            <input class="form-control" placeholder="Street name and number">
+                            <label>Surname</label>
+                            <input class="form-control" placeholder="Your surname" data-bind="value: personalInformation().middleName" required>
                         </div>
                         <div class="form-group">
-                            <label>Country</label>
-                            <input class="form-control" placeholder="Your country">
+                            <label>Family name</label>
+                            <input class="form-control" placeholder="Your family name" data-bind="value: personalInformation().lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of birth</label>
+                            <input class="form-control" placeholder="Your date of birth" data-bind="value: personalInformation().dateOfBirth" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input class="form-control" placeholder="Your age" data-bind="value: personalInformation().age" required>
                         </div>
                         <div class="form-group">
                             <label>E-mail</label>
-                            <input class="form-control" placeholder="example@mail.com">
+                            <input class="form-control" placeholder="example@mail.com" data-bind="value: personalInformation().email" required>
                         </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <input class="form-control" placeholder="Your gender" data-bind="value: personalInformation().gender" required>
+                            @*<select></select>*@
+                        </div>
+                        <div class="form-group">
+                            <label>Phone number</label>
+                            <input class="form-control" placeholder="Your phone number" data-bind="value: personalInformation().phoneNumber">
+                        </div>
+                        <div class="form-group">
+                            <label>Street</label>
+                            <input class="form-control" placeholder="Street name and number" data-bind="value: personalInformation().address">
+                        </div>
+                        <div class="form-group">
+                            <label>Nationality</label>
+                            <input class="form-control" placeholder="Your nationality" data-bind="value: personalInformation().nationality">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input class="form-control" placeholder="Your country" data-bind="value: personalInformation().country">
+                        </div>
+                        @*<div class="form-control">
+                                <label>Social media</label>
+                                <input class="form-control" placeholder="todo fix">
+                            </div>*@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -58,10 +161,53 @@
         </div>
         <!-- end modal -->
     </div>
+
     <br>
+
     <div class="row" id="aditionalInfo">
-        <div class="col-lg-12">
+        <div class="col-lg-12" data-bind="visible: education().length  == 0">
+            <h1>No education added.</h1>
+        </div>
+        <div class="col-lg-12" data-bind="visible: education().length > 0">
             <h1> Еducation and training: </h1>
+            <div data-bind="foreach: education">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Type: </label>
+                        <label class="col-lg-4" data-bind="text: type"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">From: </label>
+                        <label class="col-lg-4" data-bind="text: from"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">To: </label>
+                        <label class="col-lg-4" data-bind="text: to"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">School name: </label>
+                        <label class="col-lg-4" data-bind="text: schoolName"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Status: </label>
+                        <label class="col-lg-4" data-bind="text: status"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Qualification: </label>
+                        <label class="col-lg-4" data-bind="text: qualification"></label>
+                    </div>
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#educationAndTraining">
                 Change
             </button>
@@ -76,24 +222,29 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>From data</label>
-                            <input class="form-control" placeholder="from data">
+                            <label>Education type</label>
+                            <input class="form-control" placeholder="Education type" data-bind="value: education()[index()]().type">
                         </div>
                         <div class="form-group">
-                            <label>To data</label>
-                            <input class="form-control" placeholder="To data">
+                            <label>From date</label>
+                            <input class="form-control" placeholder="From date" data-bind="value: education()[index()]().from">
+                        </div>
+                        <div class="form-group">
+                            <label>To date</label>
+                            <input class="form-control" placeholder="to date" data-bind="value: education()[index()]().to">
                         </div>
                         <div class="form-group">
                             <label>Qualification</label>
-                            <input class="form-control" placeholder="your specialty">
+                            <input class="form-control" placeholder="Your specialty" data-bind="value: education()[index()]().qualification">
                         </div>
                         <div class="form-group">
                             <label>Your School name</label>
-                            <input class="form-control" placeholder="enter name of your school">
+                            <input class="form-control" placeholder="Enter name of your school" data-bind="value: education()[index()]().schoolName">
                         </div>
                         <div class="form-group">
-                            <label>Additional information about your shcool</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <label>Status</label>
+                            <input class="form-control" placeholder="Status" data-bind="value: education()[index()]().status">
+                            @*<textarea class="form-control" rows="3"></textarea>*@
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -106,9 +257,145 @@
         <!-- end modal -->
     </div>
     <br>
+
     <div class="row" id="aditionalInfo">
-        <div class="col-lg-12">
+        <div class="col-lg-12" data-bind="visible: certificates.length == 0">
+            <h1>No certificates added.</h1>
+        </div>
+
+        <div class="col-lg-12" data-bind="visible: certificates.length > 0">
+            <h1>Certificates: </h1>
+            <div data-bind="foreach: cetificates">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Date accuired: </label>
+                        <label class="col-lg-2" data-bind="text: dateAccuired"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Expiration date: </label>
+                        <label class="col-lg-2" data-bind="text: expirationDate"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Period: </label>
+                        <label class="col-lg-4" data-bind="text: period"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Certificate name: </label>
+                        <label class="col-lg-6" data-bind="text: certicateName"></label>
+                    </div> 
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Certificate type: </label>
+                        <label class="col-lg-4" data-bind="text: certificateType"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Certificate organization: </label>
+                        <label class="col-lg-6" data-bind="text: certificateOrganization"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#skills"> Change </button>
+    </div>
+
+    <div class="modal fade" id="skills" tabindex="-1" role="dialog" aria-labelledby="motherLanguage">
+        <div div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Fill your skills</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Date accuired</label>
+                        <input class="form-control" data-bind="value: certificates()[index()]().dateAccuired">
+                    </div>
+                    <div class="form-group">
+                        <label>Expiration date</label>
+                        <input class="form-control" data-bind="value: certificates()[index()]().expirationDate">
+                    </div>
+                    <div class="form-group">
+                        <label>Period</label>
+                        <input class="form-control" data-bind="value: certificates()[index()]().period">
+                    </div>
+                    <div class="form-group">
+                        <label>Certificate name</label>
+                        <input class="form-control" data-bind="value: certificates()[index()]().certificateName">
+                    </div>
+                    <div class="form-group">
+                        <label>Certificate type</label>
+                        <input class="form-control" data-bind="value: certificates()[index()]().certificateType">
+                    </div>
+                    <div class="form-group">
+                        <label>Certificate organization</label>
+                        <input class="form-control" data-bind="value: certificates()[index()]().certificateOrganization">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12" data-bind="visible: workExperience().length == 0">
+            <h1>No working experience added.</h1>
+        </div>
+        <div class="col-lg-12" data-bind="visible: workExperience().length > 0">
             <h1> Work experience: </h1>
+            <div data-bind="foreach: workExperience">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Employer name</label>
+                        <label class="col-lg-4" data-bind="text: employer"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Period: </label>
+                        <label class="col-lg-4" data-bind="text: period"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">From: </label>
+                        <label class="col-lg-4" data-bind="text: from"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">To: </label>
+                        <label class="col-lg-4" data-bind="text: to"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Occupation: </label>
+                        <label class="col-lg-4" data-bind="text: occupation"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Responsibilities :</label>
+                        <label class="col-lg-6" data-bind="text: respnsibilities"></label>
+                    </div>
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#educationAndTraining"> Change </button>
         </div>
     </div>
@@ -122,21 +409,28 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
+                        <label>Employer name</label>
+                        <input class="form-control" placeholder="employer name" data-bind="value: workExperience()[index()]().employer">
+                    </div>
+                    <div class="form-group">
+                        <label>Period</label>
+                        <input class="form-control" placeholder="period" data-bind="value: workExperience()[index()]().period">
+                    </div>
+                    <div class="form-group">
                         <label>From data</label>
-                        <input class="form-control" placeholder="from data">
+                        <input class="form-control" placeholder="from data" data-bind="value: workExperience()[index()]().from">
                     </div>
                     <div class="form-group">
                         <label>To data</label>
-                        <input class="form-control" placeholder="To data">
+                        <input class="form-control" placeholder="to data" data-bind="value: workExperience()[index()]().to">
                     </div>
                     <div class="form-group">
-                        <label>Employer</label>
-                        <input class="form-control" placeholder="employer">
+                        <label>Occupation</label>
+                        <input class="form-group" placeholder="occupation" data-bind="value: workExperience()[index()]().occupation">
                     </div>
-
                     <div class="form-group">
-                        <label>Additional information about your responsibility</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <label>Responsibilities</label>
+                        <textarea class="form-control" rows="3" data-bind="value: workExperience()[index()]().responsibilities"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -148,6 +442,7 @@
     </div>
     <!-- end modal -->
     <br>
+
     <div class="row">
         <div class="col-lg-12">
             <h1 class="text-primary"> Personal Skills </h1>
@@ -213,9 +508,37 @@
     </div>
     <!-- end modal -->
     <br>
+
     <div class="row" id="aditionalInfo">
-        <div class="col-lg-12">
+        <div class="col-lg-12" data-bind="visible: skills == undefined">
+            <h1>No skills added.</h1>
+        </div>
+        <div class="col-lg-12" data-bind="visibile: skills != undefined">
             <h1> Skills: </h1>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Personal skills: </label>
+                    <label class="col-lg-6" data-bind="text: skills().personalSkills"></label>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Communication skills: </label>
+                        <label class="col-lg-6" data-bind="text: skills().communicationSkills"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Proffesional skills</label>
+                        <label class="col-lg-6" data-bind="text: skills().proffesionalSkills"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Other skills: </label>
+                        <label class="col-lg-6" data-bind="text: skills().otherSkills"></label>
+                    </div>
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#skills"> Change </button>
         </div>
     </div>
@@ -229,18 +552,21 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Organization Skills</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <label>Personal skills</label>
+                        <textarea class="form-control" rows="5" data-bind="value: skills().personalSkills"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Communication skills</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <label>Communication Skills</label>
+                        <textarea class="form-control" rows="5" data-bind="value: skills().communicationSkills"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Digital skills</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <label>Proffesional skills</label>
+                        <textarea class="form-control" rows="5" data-bind="value: skills().proffesionalSkills"></textarea>
                     </div>
-
+                    <div class="form-group">
+                        <label>Other skills</label>
+                        <textarea class="form-control" rows="5" data-bind="value: skills().otherSkills"></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -249,9 +575,96 @@
             </div>
         </div>
     </div>
+
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12" data-bind="visible: drivingLicences().length == 0">
+            <h1>No driving licences added.</h1>
+        </div>
+
+        <div class="col-lg-12" data-bind="visible: drivingLicences().length > 0">
+            <h1>Driving licences</h1>
+            <div data-bind="foeach: drivingLicences">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Category ID: </label>
+                        <label class="col-lg-2" data-bind="text: categoryId"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Category name: </label>
+                        <label class="col-lg-4" data-bind="text: categoryName"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#driving-skills"> Change </button>
+    </div>
+
+    <div class="modal fade" id="driving-skills" tabindex="-1" role="dialog" aria-labelledby="driving-skills">
+        <div div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Fill your driving licence</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Category ID</label>
+                        <input class="form-control" placeholder="category id" data-bind="value: drivingSkills().categoryId">
+                    </div>
+                    <div class="form-group">
+                        <label>Category name</label>
+                        <input class="form-control" placeholder="category name" data-bind="value: drivingSkills().categoryName">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*TEMPLATE!!!*@
+
+    @*<div class="row" id="aditionalInfo">
+
+            <h1>Driving licences</h1>
+
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#skills"> Change </button>
+        </div>
+
+        <div class="modal fade" id="skills" tabindex="-1" role="dialog" aria-labelledby="motherLanguage">
+            <div div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fill your skills</h4>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
     <!-- end modal -->
 </div>
 <button type="button" class="btn btn-primary center-block">Save changes</button>
-    </div>
-    </div>
+@*</div>
+    </div>*@
 <!-- /#wrapper -->
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/scripts/Model/education.js"></script>
+    <script src="~/scripts/Model/personal-information.js"></script>
+    <script src="~/scripts/Model/curriculum-vitae.js"></script>
+    <script src="~/scripts/knockout-3.3.0.debug.js"></script>
+    <script src="~/scripts/underscore-min.js"></script>
+    <script src="~/scripts/curriculum-vitae-ko-model.js"></script>
+    <script src="~/scripts/main.js"></script>
+}
