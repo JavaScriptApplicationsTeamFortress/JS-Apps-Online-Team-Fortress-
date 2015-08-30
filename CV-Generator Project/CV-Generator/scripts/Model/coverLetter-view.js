@@ -1,4 +1,4 @@
-﻿$(function () {
+﻿$(function coverLetterView() {
     var i,
         len,
         fields = [{
@@ -43,4 +43,7 @@
         $('<br/>')
             .appendTo(wrapper);
     }
+    return wrapper;
 });
+
+module.exports = coverLetterView;

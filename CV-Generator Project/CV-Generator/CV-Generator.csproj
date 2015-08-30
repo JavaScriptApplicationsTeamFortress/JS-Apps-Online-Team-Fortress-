@@ -334,6 +334,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseLayer\DatabaseLayer.csproj">
+      <Project>{73c47948-6021-4241-aa84-887c1e6b52aa}</Project>
+      <Name>DatabaseLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UserDataLayer\UserDataLayer.csproj">
       <Project>{c1b01e80-e925-40ed-bfff-506507da1fbc}</Project>
       <Name>UserDataLayer</Name>

@@ -1,4 +1,5 @@
-﻿var expect = chai.expect;
+﻿var coverLetterView = require('../../Scripts/Model/coverLetter-view.js');
+var expect = require('chai').expect;
 
 describe('calculator', function() {
     it('adds', function () {
