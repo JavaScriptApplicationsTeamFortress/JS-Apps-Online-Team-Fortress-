@@ -16,6 +16,7 @@ namespace CV_Generator.Controllers
                 return RedirectToAction("Login", "Account", "Test");
             }
             ViewBag.CurrentPage = "selected";
+
             return View();
         }
        
@@ -28,6 +29,7 @@ namespace CV_Generator.Controllers
 
             ViewBag.Message = "Template for create CV.";
             ViewBag.CurrentPage = "selected";
+
             return View("Add");
         }
         public ActionResult PreviewDocument()
@@ -38,6 +40,7 @@ namespace CV_Generator.Controllers
             }
 
             ViewBag.Message = "View document";
+
             return View("PreviewDocument");
         }
 

@@ -176,8 +176,21 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdditionalInformationModels.cs" />
+    <Compile Include="Models\CertificateModels.cs" />
+    <Compile Include="Models\CurriculumVitaeModels.cs" />
+    <Compile Include="Models\DrivingLicenceCategoryModels.cs" />
+    <Compile Include="Models\DrivingLicenceModels.cs" />
+    <Compile Include="Models\EducationModels.cs" />
+    <Compile Include="Models\EmployerModels.cs" />
+    <Compile Include="Models\ForeignLanguageModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LanguagesModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PersonalInformationModels.cs" />
+    <Compile Include="Models\Sex.cs" />
+    <Compile Include="Models\SocialMediaModels.cs" />
+    <Compile Include="Models\WorkExperienceModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
