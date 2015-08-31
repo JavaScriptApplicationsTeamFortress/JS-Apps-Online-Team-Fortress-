@@ -64,6 +64,23 @@ namespace UserDataLayer
                 applicationUser.Roles.Add(role.Convert());
             }
 
+            applicationUser.AccessFailedCount = this.AccessFailedCount;
+
+            foreach (var claim in this.IdentityUserClaimWrappers)
+            {
+                applicationUser.Claims.Add(claim.Convert());
+            }
+
+            applicationUser.Email = this.Email;
+            applicationUser.EmailConfirmed = this.EmailConfirmed;
+            applicationUser.LockoutEnabled = this.LockoutEnabled;
+            applicationUser.LockoutEndDateUtc = this.LockoutEndDateUtc;
+            applicationUser.PasswordHash = this.PasswordHash;
+            applicationUser.PhoneNumber = this.PhoneNumber;
+            applicationUser.PhoneNumberConfirmed = this.PhoneNumberConfirmed;
+            applicationUser.SecurityStamp = this.SecurityStamp;
+            applicationUser.UserName = this.UserName;
+            applicationUser.TwoFactorEnabled = this.TwoFactorEnabled;
 
             return applicationUser;
         }

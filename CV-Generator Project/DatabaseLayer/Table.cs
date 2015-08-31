@@ -59,6 +59,13 @@
             return this.XTable.TryGet(key, out value);
         }
 
+        public bool Remove(TKey key)
+        {
+            this.XTable.Delete(key);
+
+            return true;
+        }
+
         public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
         {
             foreach (var kv in this.XTable)
