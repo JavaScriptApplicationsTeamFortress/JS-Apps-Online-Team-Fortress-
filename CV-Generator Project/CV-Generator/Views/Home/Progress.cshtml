@@ -1,0 +1,206 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Progress - CV Generator </title>
+<style>
+/* Load animation */
+
+@-webkit-keyframes 
+load { 0% {
+stroke-dashoffset:0
+}
+}
+@-moz-keyframes 
+load { 0% {
+stroke-dashoffset:0
+}
+}
+@keyframes 
+load { 0% {
+stroke-dashoffset:0
+}
+}
+
+/* Container */
+
+.progress {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  text-align: center;
+}
+
+/* Item */
+
+.progress>li {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  color: #93A2AC;
+  font-family: Lato;
+  font-weight: 100;
+  margin: 2rem;
+}
+
+.progress>li:before {
+  content: attr(data-name);
+  position: absolute;
+  width: 100%;
+  bottom: -2rem;
+  font-weight: 400;
+}
+
+.progress>li:after {
+  content: attr(data-percent);
+  position: absolute;
+  width: 100%;
+  top: 3.7rem;
+  left: 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.progress svg {
+  width: 10rem;
+  height: 10rem;
+}
+
+.progress svg:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+}
+
+.progress svg:nth-child(2) path {
+  fill: none;
+  stroke-width: 25;
+  stroke-dasharray: 629;
+  stroke: rgba(255, 255, 255, 0.9);
+  -webkit-animation: load 10s;
+  -moz-animation: load 10s;
+  -o-animation: load 10s;
+  animation: load 10s;
+}
+</style>
+</head>
+
+<body>
+<h1 style="margin-top:150px;" align="center">Your progress for the moment to generate CV</h1>
+<!--  Container  -->
+<ul class="progress">
+  <!--  Item  -->
+  <li data-name="Personal Info" data-percent="13%"> <svg viewBox="-10 -10 220 220">
+    <g fill="none" stroke-width="3" transform="translate(100,100)">
+      <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+      <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+      <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+      <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+      <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+      <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+    </g>
+    </svg> <svg viewBox="-10 -10 220 220">
+    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="81"></path>
+    </svg> </li>
+  <!--  Item  -->
+  <li data-name="Еducation and training" data-percent="87%"> <svg viewBox="-10 -10 220 220">
+    <g fill="none" stroke-width="2" transform="translate(100,100)">
+      <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+      <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+      <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+      <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+      <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+      <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+    </g>
+    </svg> <svg viewBox="-10 -10 220 220">
+    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="547"></path>
+    </svg> </li>
+  <!--  Item  -->
+  <li data-name="Work experience" data-percent="13%"> <svg viewBox="-10 -10 220 220">
+    <g fill="none" stroke-width="12" transform="translate(100,100)">
+      <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+      <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+      <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+      <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+      <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+      <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+    </g>
+    </svg> <svg viewBox="-10 -10 220 220">
+    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="81"></path>
+    </svg> </li>
+  <!--  Item  -->
+  <li data-name="Languages" data-percent="97%"> <svg viewBox="-10 -10 220 220">
+    <g fill="none" stroke-width="9" transform="translate(100,100)">
+      <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+      <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+      <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+      <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+      <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+      <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+    </g>
+    </svg> <svg viewBox="-10 -10 220 220">
+    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="610"></path>
+    </svg> </li>
+  <!--  Item  -->
+  <li data-name="Skills" data-percent="58%"> <svg viewBox="-10 -10 220 220">
+    <g fill="none" stroke-width="6" transform="translate(100,100)">
+      <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+      <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+      <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+      <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+      <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+      <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+    </g>
+    </svg> <svg viewBox="-10 -10 220 220">
+    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="364"></path>
+    </svg> </li>
+  <!--  Item  -->
+  <li data-name="Complete CV" data-percent="100%"> <svg viewBox="-10 -10 220 220">
+    <g fill="none" stroke-width="6" transform="translate(100,100)">
+      <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+      <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+      <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+      <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+      <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+      <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+    </g>
+    </svg> <svg viewBox="-10 -10 220 220">
+    <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="629"></path>
+    </svg> </li>
+</ul>
+<!--  Defining Angle Gradient Colors  --> 
+<svg width="0" height="0">
+<defs>
+  <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#618099"/>
+    <stop offset="100%" stop-color="#8e6677"/>
+  </linearGradient>
+  <linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#8e6677"/>
+    <stop offset="100%" stop-color="#9b5e67"/>
+  </linearGradient>
+  <linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
+    <stop stop-color="#9b5e67"/>
+    <stop offset="100%" stop-color="#9c787a"/>
+  </linearGradient>
+  <linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
+    <stop stop-color="#9c787a"/>
+    <stop offset="100%" stop-color="#817a94"/>
+  </linearGradient>
+  <linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
+    <stop stop-color="#817a94"/>
+    <stop offset="100%" stop-color="#498a98"/>
+  </linearGradient>
+  <linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
+    <stop stop-color="#498a98"/>
+    <stop offset="100%" stop-color="#618099"/>
+  </linearGradient>
+</defs>
+</svg>
+
+</body>
+</html>
