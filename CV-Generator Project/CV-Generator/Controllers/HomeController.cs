@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace CV_Generator.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public readonly Table<string, CurriculumVitaeModels> table;
@@ -22,11 +23,6 @@ namespace CV_Generator.Controllers
 
         public ActionResult Index()
         {
-            if (!IsLogged())
-            {
-                return RedirectToAction("Login", "Account", "Test");
-            }
-
             ViewBag.CurrentPage = "selected";//This is very bad practice;
 
             var userId = this.User.Identity.GetUserId();
@@ -48,11 +44,6 @@ namespace CV_Generator.Controllers
        
         public ActionResult CreateCV()
         {
-            if (!IsLogged())
-            {
-                return RedirectToAction("Login", "Account", "Test");
-            }
-
             ViewBag.Message = "Template for create CV.";//This is very bad practice;
             ViewBag.CurrentPage = "selected";//This is very bad practice;
 
@@ -60,6 +51,7 @@ namespace CV_Generator.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult PreviewDocument(string id = null)
         {
             ViewBag.Message = "View document";//This is very bad practice;
