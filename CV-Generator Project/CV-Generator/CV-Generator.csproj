@@ -266,6 +266,7 @@
     <Content Include="Scripts\Model\driving-licences.js" />
     <Content Include="Scripts\Model\education.js" />
     <Content Include="Scripts\Model\extraFormGenerator.js" />
+    <Content Include="Scripts\Model\indicationCurrentPage.js" />
     <Content Include="Scripts\Model\languages.js" />
     <Content Include="Scripts\Model\personal-information.js" />
     <Content Include="Scripts\Model\skills.js" />

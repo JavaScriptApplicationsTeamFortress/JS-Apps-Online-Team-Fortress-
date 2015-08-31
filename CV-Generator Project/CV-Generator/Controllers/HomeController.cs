@@ -15,10 +15,10 @@ namespace CV_Generator.Controllers
             {
                 return RedirectToAction("Login", "Account", "Test");
             }
-
+            ViewBag.CurrentPage = "selected";
             return View();
         }
-
+       
         public ActionResult CreateCV()
         {
             if (!IsLogged())
@@ -27,8 +27,18 @@ namespace CV_Generator.Controllers
             }
 
             ViewBag.Message = "Template for create CV.";
-
+            ViewBag.CurrentPage = "selected";
             return View("Add");
+        }
+        public ActionResult PreviewDocument()
+        {
+            if (!IsLogged())
+            {
+                return RedirectToAction("Login", "Account", "Test");
+            }
+
+            ViewBag.Message = "View document";
+            return View("PreviewDocument");
         }
 
         [HttpPost]

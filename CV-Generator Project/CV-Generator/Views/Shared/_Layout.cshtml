@@ -26,11 +26,11 @@
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul id="active" class="nav navbar-nav side-nav">
-                    <li class="selected">@Html.ActionLink("Home", "Index", "Home") </li>
-                    <li class="">@Html.ActionLink("Add CV", "CreateCV", "Home")</li>
+                    <li id="home" class="">@Html.ActionLink("Home", "Index", "Home") </li>
+                    <li id="addCv" class="">@Html.ActionLink("Add CV", "CreateCV", "Home")</li>
                     <!--<li class="">@Html.ActionLink("Add Cover Letter", "CoverLetter", "Home")</li>-->
-                    <li class="">@Html.ActionLink("Preview Document", "View", "Home")</li>
-                    <li class=""><a href="#"><i class="fa fa-bullseye"></i> Export Document</a></li>
+                    <li id="prevDocument" class="">@Html.ActionLink("Preview Document", "PreviewDocument", "Home")</li>
+                    <li class=""><a href="#"> Export Document</a></li>
                 </ul>
 
                 @Html.Partial("_LoginPartial")
@@ -48,6 +48,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/Model/extraFormGenerator.js")
+    @Scripts.Render("~/Scripts/Model/indicationCurrentPage.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>
