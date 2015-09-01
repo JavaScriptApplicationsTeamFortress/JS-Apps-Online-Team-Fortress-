@@ -32,7 +32,7 @@
             }
 
             var xtable = this.storageEngine.OpenXTable<TKey, TValue>(name);
-            var table = new Table<TKey, TValue>(xtable, name);
+            var table = new Table<TKey, TValue>(this.storageEngine, xtable, name);
 
             return table;
         }

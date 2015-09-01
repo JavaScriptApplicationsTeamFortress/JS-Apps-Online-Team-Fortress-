@@ -7,11 +7,18 @@
 
     public class Table<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
     {
-        public readonly ITable<TKey, TValue> XTable;
+        private IStorageEngine storageEngine;
+        private ITable<TKey, TValue> xtable;
+
         public readonly string Name;
 
-        public Table(ITable<TKey, TValue> xtable, string name)
+        public Table(IStorageEngine storageEngine ,ITable<TKey, TValue> xtable, string name)
         {
+            if (storageEngine == null)
+            {
+                throw new ArgumentNullException("storageEngine");
+            }
+
             if (xtable == null)
             {
                 throw new ArgumentNullException("xtable");
@@ -22,7 +29,8 @@
                 throw new ArgumentException("name of table is invalid");
             }
 
-            this.XTable = xtable;
+            this.storageEngine = storageEngine;
+            this.xtable = xtable;
             this.Name = name;
         }
 
@@ -30,12 +38,13 @@
         {
             get
             {
-                return this.XTable[key];
+                return this.xtable[key];
             }
 
             set
             {
-                this.XTable[key] = value;
+                this.xtable[key] = value;
+                this.storageEngine.Commit();
             }
         }
 
@@ -46,29 +55,32 @@
                 throw new ArgumentException("key present");
             }
 
-            this.XTable.Replace(key, value);
+            this.xtable.Replace(key, value);
+
+            this.storageEngine.Commit();
         }
 
         public bool Contains(TKey key)
         {
-            return this.XTable.Exists(key);
+            return this.xtable.Exists(key);
         }
 
         public bool TryGet(TKey key, out TValue value)
         {
-            return this.XTable.TryGet(key, out value);
+            return this.xtable.TryGet(key, out value);
         }
 
         public bool Remove(TKey key)
         {
-            this.XTable.Delete(key);
+            this.xtable.Delete(key);
+            this.storageEngine.Commit();
 
             return true;
         }
 
         public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
         {
-            foreach (var kv in this.XTable)
+            foreach (var kv in this.xtable)
             {
                 yield return kv;
             }
