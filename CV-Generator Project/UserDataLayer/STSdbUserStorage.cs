@@ -177,20 +177,21 @@
 
         public Task<ApplicationUser> FindByNameAsync(string userName)
         {
-            return Task<ApplicationUser>.Factory.StartNew(() =>
+            return Task<ApplicationUser>.Factory.StartNew((state) =>
             {
                 foreach (var kv in this.Table)
                 {
                     var user = kv.Value;
 
-                    if (user.UserName == userName)
+                    if (user.UserName.ToLower().Contains(((string)state).ToLower()))
                     {
                         return user.Convert();
                     }
                 }
 
                 return null;
-            }); ;
+
+            }, userName); ;
         }
 
         public Task<int> GetAccessFailedCountAsync(ApplicationUser user)
@@ -250,15 +251,15 @@
             {
                 this.CreateUserIfDoesnotExist(user);
 
-                var ticks = DateTimeOffset.Now.Ticks;
+                var dateTime = DateTime.Now.AddHours(-2);
                 var lockoutEndDateUtc = this.Table[user.Id].LockoutEndDateUtc;
 
                 if (lockoutEndDateUtc != null)
                 {
-                    ticks = lockoutEndDateUtc.Value.Ticks;
+                    dateTime = lockoutEndDateUtc.Value;
                 }
 
-                return new DateTimeOffset(ticks, new TimeSpan());
+                return new DateTimeOffset(dateTime);
             });
         }
 
