@@ -23,16 +23,16 @@
 var Languages = function () {
     "use strict";
 
-    this.motherTongue = null;
+    this.motherTongue = "";
     this.foreignLanguages = [];
 }
 
 var ForeignLanguages = function () {
     "use strict";
 
-    this.name = null;
-    this.skillGroup = null;
-    this.hearing = null;
-    this.speaking = null;
-    this.listening = null;
+    this.name = "";
+    this.skillGroup = "";
+    this.hearing = "";
+    this.speaking = "";
+    this.listening = "";
 }

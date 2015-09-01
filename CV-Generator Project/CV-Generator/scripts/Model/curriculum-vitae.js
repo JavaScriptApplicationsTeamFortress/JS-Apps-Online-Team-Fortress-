@@ -29,22 +29,22 @@
 var CurriculumVitae = function () {
     "use strict";
 
-    this.personalInformation = null;
-    this.photo = null;
-    this.language = null;
-    this.workExperience = [];
-    this.education = [];
-    this.skills = null;
-    this.certificates = [];
+    this.personalInformation = ""; //done
+    this.photo = "";
+    this.language = ""; 
+    this.workExperience = []; //done
+    this.education = []; //done
+    this.skills = ""; //done
+    this.certificates = []; //done
     this.languages = [];
-    this.drivingLicences = [];
-    this.additionalInformation = null;
+    this.drivingLicences = []; //done
+    this.additionalInformation = "";
 }
 
 var AdditionalInformation = function () {
     "use strict";
 
-    this.text = null;
+    this.text = "";
 }
 
 AdditionalInformation.prototype.init = function (text) {

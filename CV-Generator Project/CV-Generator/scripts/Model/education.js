@@ -27,22 +27,22 @@
 var Education = function () {
     "use strict";
 
-    this.type = null;
-    this.from = null;
-    this.to = null;
-    this.schoolName = null;
-    this.status = null;
-    this.qualification = null;
+    this.type = "";
+    this.from = "";
+    this.to = "";
+    this.schoolName = "";
+    this.status = "";
+    this.qualification = "";
 }
 
-var Certificates = function () {
+var Certificate = function () {
     "use strict";
 
-    this.dateAccuired = null;
-    this.expirationDate = null;
-    this.period = null;
-    this.certificateName = null;
-    this.certificateType = null;
-    this.certificateOrganization = null;
-    this.attachment = null;
+    this.dateAccuired = "";
+    this.expirationDate = "";
+    this.period = "";
+    this.name = "";
+    this.type = "";
+    this.organization = "";
+    this.attachment = "";
 }

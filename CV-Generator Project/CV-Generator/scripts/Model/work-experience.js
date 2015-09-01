@@ -26,20 +26,20 @@
 var WorkExperience = function () {
     "use strict";
 
-    this.employer = null;
-    this.period = null;
-    this.from = null;
-    this.to = null;
-    this.occupation = null;
-    this.responsibilities = null;
+    this.employer = "";
+    this.period = "";
+    this.from = "";
+    this.to = "";
+    this.occupation = "";
+    this.responsibilities = "";
 }
 
 var Employer = function () {
     "use strict";
 
-    this.name = null;
-    this.country = null;
-    this.city = null;
-    this.website = null;
-    this.recommendations = null; //can be array
+    this.name = "";
+    this.country = "";
+    this.city = "";
+    this.website = "";
+    this.recommendations = ""; //can be array
 }

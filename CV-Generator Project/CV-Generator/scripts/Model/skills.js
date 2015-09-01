@@ -44,32 +44,32 @@
 var PersonalSkills = function () {
     "use strict";
 
-    this.text = null;
+    this.text = "";
 }
 
 var CommunicationSkills = function () {
     "use strict";
 
-    this.text = null;
+    this.text = "";
 }
 
 var ProffesionalSkills = function () {
     "use strict";
 
-    this.text = null;
+    this.text = "";
 }
 
 var OtherSkills = function () {
     "use strict";
 
-    this.text = null;
+    this.text = "";
 }
 
 var Skills = function () {
     "use strict";
 
-    this.personalSkills = null;
-    this.communicationSkills = null;
-    this.proffesionalSkills = null;
-    this.otherSkills = null;
+    this.personalSkills = "";
+    this.communicationSkills = "";
+    this.proffesionalSkills = "";
+    this.otherSkills = "";
 }

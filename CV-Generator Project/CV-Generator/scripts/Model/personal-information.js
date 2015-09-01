@@ -33,28 +33,28 @@
 var PersonalInformation = function () {
     "use strict";
 
-    this.firstName = null;
-    this.middleName = null;
-    this.lastName = null;
-    this.email = null;
-    this.dateOfBirth = null;
-    this.age = null;
-    this.gender = null;
-    this.phoneNumber = null;
-    this.address = null;
-    this.country = null;
-    this.nationality = null;
-    this.socialMedia = null;
+    this.firstName = "";
+    this.middleName = "";
+    this.lastName = "";
+    this.email = "";
+    this.dateOfBirth = "";
+    this.age = "";
+    this.gender = "";
+    this.phoneNumber = "";
+    this.address = "";
+    this.country = "";
+    this.nationality = "";
+    this.socialMedia = "";
 }
 
 var SocialMedia = function () {
     "use strict";
 
-    this.facebook = null;
-    this.google = null;
-    this.twitter = null;
-    this.yahoo = null;
-    this.linkedin = null;
-    this.skype = null;
-    this.github = null;
+    this.facebook = "";
+    this.google = "";
+    this.twitter = "";
+    this.yahoo = "";
+    this.linkedin = "";
+    this.skype = "";
+    this.github = "";
 }

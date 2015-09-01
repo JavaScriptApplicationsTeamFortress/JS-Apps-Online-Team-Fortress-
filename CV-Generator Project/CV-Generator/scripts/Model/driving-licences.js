@@ -25,9 +25,9 @@ var DrivingLicences = function () {
 var DrivingLicenceCategories = function () {
     "use strict";
 
-    this.categoryId = null;
-    this.categoryName = null;
-    this.attachment = null;
+    this.categoryId = "";
+    this.categoryName = "";
+    this.attachment = "";
 }
 
 DrivingLicenceCategories.prototype.init = function (values) {

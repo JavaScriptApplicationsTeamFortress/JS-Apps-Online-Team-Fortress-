@@ -5,12 +5,29 @@
 
     //convert object to observable and returns it
     knockout.wrapObject = function (object) {
-        if (Type.isPrimitive(object) || Type.isObject(object)) {
+        var keys,
+            observableObject,
+            observable;
+
+        if (Type.isPrimitive(object)) {
             return ko.observable(object);
         }
 
         if (Type.isArray(object)) {
             return knockout.wrapArray(object);
+        }
+
+        if (Type.isObject(object)) {
+            //return knockout.wrapObject(object);
+            keys = Object.keys(object);
+            observableObject = {};
+
+            _.each(keys, function (key, index, keys) {
+                observable = knockout.wrapObject(object[key]);
+                observableObject[key] = observable;
+            });
+
+            return ko.observable(observableObject);
         }
 
         return ko.observable();
@@ -69,7 +86,7 @@
             observable = knockout.wrapArray(object);
         }
         else {
-            observable = knockout.wrapObject();
+            observable = knockout.wrapObject(object);
         }
 
         model[observableName] = observable;
@@ -79,10 +96,22 @@
         model[functionName] = functionHandler;
     }
 
+    knockout.createObservable = function (object) {
+        return ko.observable(object);
+    }
+
+    knockout.createObservableArray = function (array) {
+        return ko.observableArray(array);
+    }
+
     return {
         wrapObject: knockout.wrapObject,
         wrapArray: knockout.wrapArray,
-        createModel: knockout.createModel
+        createModel: knockout.createModel,
+        addObservableToModel: knockout.addObservableToModel,
+        addFunctionToModel: knockout.addFunctionToModel,
+        createObservable: knockout.createObservable,
+        createObservableArray: knockout.createObservableArray
     };
 })();
 
