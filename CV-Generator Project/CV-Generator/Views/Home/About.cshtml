@@ -560,9 +560,12 @@
                             <label class="col-lg-4" data-bind="text: speaking"></label>
                         </div>
                     </div>
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#languages" data-bind="click: $parent.updateLanguage"> Update language </button>
+                    </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#languages">Add language</button>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#languages" data-bind="click: createLanguage">Add language</button>
         </div>
 
         <div class="modal fade" id="languages" tabindex="-1" role="dialog" aria-labelledby="motherLanguage">
@@ -596,77 +599,48 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-primary" data-bind="click: $root.addLanguage">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div>
-        <div class="row" id="aditionalInfo">
-            <div class="col-lg-12" data-bind="visible: drivingLicences().length == 0">
-                <h1>No driving licences added.</h1>
-            </div>
-
-            <div class="col-lg-12" data-bind="visible: drivingLicences().length > 0">
-                <h1>Driving licences</h1>
-                <div data-bind="foeach: drivingLicences">
-                    @*<div class="col-lg-12">
-                            <div class="form-group">
-                                <label class="col-lg-2">Category ID: </label>
-                                <label class="col-lg-2" data-bind="text: drivingLicences[$index].categoryId"></label>
-                            </div>
-                        </div>*@
-                    @*<div class="col-lg-12">
-                            <div class="form-group">
-                                <label class="col-lg-2">Category name: </label>
-                                <label class="col-lg-4" data-bind="text: categoryName"></label>
-                            </div>
-                        </div>*@
-
-                    @*<div class="col-lg-12">
-                            <div class="form-group">
-                                <label class="col-lg-12">Category ID: </label>
-                                <label class="col-lg-12" data-bind="text: categoryId"></label>
-                            </div>
-                        </div>*@
-
-                    @*<div class="col-lg-12">
-                            <div class="form-group">
-                                <label class="col-lg-2">Category ID: </label>
-                                <label class="col-lg-4" data-bind="text: drivingLicences()[$index].categoryId"></label>
-                            </div>
-                        </div>*@
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#driving-skills"> Change </button>
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12" data-bind='visible: additionalInformation() == ""'>
+            <h1>No skills added.</h1>
         </div>
 
-        @*<div class="modal fade" id="driving-skills" tabindex="-1" role="dialog" aria-labelledby="driving-skills">
-                <div div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Fill your driving licence</h4>
-                        </div>
-                        <div class="modal-body" data-bind="if: drivingLicences.length > 0">
-                            <div class="form-group">
-                                <label>Category ID</label>
-                                <input class="form-control" placeholder="category id" data-bind="value: drivingSkills().categoryId">
-                            </div>
-                            <div class="form-group">
-                                <label>Category name</label>
-                                <input class="form-control" placeholder="category name" data-bind="value: drivingSkills().categoryName">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+        <div class="col-lg-12" data-bind='visibile: additionalInformation() != ""'>
+            <h1> Skills: </h1>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="col-lg-2">Additional information: </label>
+                    <label class="col-lg-6" data-bind="text: additionalInformation"></label>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#additional-information">Change</button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="additional-information" tabindex="-1" role="dialog" aria-labelledby="motherLanguage">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Fill your skills</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Additional Information</label>
+                        <textarea class="form-control" rows="5" data-bind="value: additionalInformation"></textarea>
                     </div>
                 </div>
-            </div>*@
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bind="click: $root.updateAdditionalInformation">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     @*TEMPLATE!!!*@
@@ -695,7 +669,7 @@
         </div>*@
     <!-- end modal -->
 </div>
-<button type="button" class="btn btn-primary center-block">Save changes</button>
+<button type="button" class="btn btn-primary center-block" data-bind="click: $root.submit">Save changes</button>
 @*</div>
     </div>*@
 <!-- /#wrapper -->
@@ -704,6 +678,7 @@
 {
     @Scripts.Render("~/bundles/jqueryval")
     <script src="~/scripts/Model/skills.js"></script>
+    <script src="~/scripts/Model/languages.js"></script>
     <script src="~/scripts/Model/driving-licences.js"></script>
     <script src="~/scripts/Model/education.js"></script>
     <script src="~/scripts/Model/work-experience.js"></script>

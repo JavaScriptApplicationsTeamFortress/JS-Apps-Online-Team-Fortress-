@@ -3,24 +3,6 @@ window.onload = (function () {
 
     var cv = new CurriculumVitae();
 
-    //var pi = new PersonalInformation();
-
-    //pi.firstName = "GOSHO";
-    //pi.lastName = "PESHOOOOO";
-    //pi.age = 37;
-
-    //var ed = new Education();
-
-    //ed.type = "Prelimitary";
-    //ed.from = 1;
-    //ed.to = 2;
-    //ed.schoolName = "Gosho";
-    //ed.status = "dropped";
-    //ed.qualification = "mindil";
-
-    //cv.personalInformation = pi;
-    //cv.education.push(ed);
-
     var model = Knockout.createModel(cv);
 
     Knockout.addObservableToModel(model, "index", 0);
@@ -61,14 +43,10 @@ window.onload = (function () {
     });
 
     Knockout.addFunctionToModel(model, "updateEducation", function (education) {
-        model.index(0); //do i need this????
-
         _.each(model.education(), function (existingEducation, index, educations) {
             if (existingEducation.type === education.type && existingEducation.from === education.from
                 && existingEducation.to === education.to && existingEducation.schoolName === education.schoolName
                 && existingEducation.status === education.status && existingEducation.qualification === education.qualification) {
-                model.index(index);
-                
                 model.educationViewObject(education);
             }
         });
@@ -90,15 +68,12 @@ window.onload = (function () {
         var observableCertificate = Knockout.wrapObject(new Certificate());
         model.certificateViewObject(observableCertificate());
     });
-    
-    Knockout.addFunctionToModel(model, "updateCertificate", function (certificate) {
-        model.index(0);
 
+    Knockout.addFunctionToModel(model, "updateCertificate", function (certificate) {
         _.each(model.certificates, function (existingCertificate, index, certificates) {
-            if(existingCertificate.dateAccuired === certificate.dateAccuired && existingCertificate.expirationDate === certificate.expirationDate
-                && existingCertificate.period === certificate.period && existingCertificate.name === certificate.name 
+            if (existingCertificate.dateAccuired === certificate.dateAccuired && existingCertificate.expirationDate === certificate.expirationDate
+                && existingCertificate.period === certificate.period && existingCertificate.name === certificate.name
                 && existingCertificate.type === certificate.type && existingCertificate.organization === certificate.organization) {
-                model.index(index);
 
                 model.certificateViewObject(certificate);
             }
@@ -123,47 +98,10 @@ window.onload = (function () {
     });
 
     Knockout.addFunctionToModel(model, "updateWorkExperience", function (workExperience) {
-        model.index(0);
-
-        _.each(model.workExperience, function (existingExperience, index, workExperience) {
-            if(existingExperience.employer === workExperience.employer && existingExperience.period === workExperience.period
-                && existingExperience.from === workExperience.from && existingExperience.to === workExperience.to
-                && existingExperience.occupation === workExperience.occupation && existingExperience.responsibilities === workExperience.responsibilities) {
-                model.index(0);
-
-                model.workExperienceViewObject(workExperience);
-            }
-        });
-    });
-
-    Knockout.addFunctionToModel(model, "addWorkExperience", function () {
-        var upwrapedObservable,
-            observable;
-
-        $("#work-experience").modal("hide");
-
-        upwrapedObservable = model.workExperienceViewObject();
-        observable = Knockout.createObservable(upwrapedObservable);
-
-        model.workExperience.push(observable);
-    });
-
-    //--------
-
-    Knockout.addFunctionToModel(model, "createLanguage", function () {
-        var observableExperience = Knockout.wrapObject(new WorkExperience());
-        model.workExperienceViewObject(observableExperience());
-    });
-
-    Knockout.addFunctionToModel(model, "updateWorkExperience", function (workExperience) {
-        model.index(0);
-
         _.each(model.workExperience, function (existingExperience, index, workExperience) {
             if (existingExperience.employer === workExperience.employer && existingExperience.period === workExperience.period
                 && existingExperience.from === workExperience.from && existingExperience.to === workExperience.to
                 && existingExperience.occupation === workExperience.occupation && existingExperience.responsibilities === workExperience.responsibilities) {
-                model.index(0);
-
                 model.workExperienceViewObject(workExperience);
             }
         });
@@ -181,5 +119,119 @@ window.onload = (function () {
         model.workExperience.push(observable);
     });
 
+    Knockout.addFunctionToModel(model, "createLanguage", function () {
+        var observableLanguage = Knockout.wrapObject(new Language());
+        model.languageViewObject(observableLanguage());
+    });
+
+    Knockout.addFunctionToModel(model, "updateLanguage", function (language) {
+        _.each(model.workExperience, function (existingLanguage, index, languages) {
+            if (existingLanguage.name === language.name && existingLanguage.skillGroup === language.skillGroup
+                && existingLanguage.speaking === language.speaking && existingLanguage.listening === language.listening && existingLanguage.reading === language.reading) {
+                model.languageViewObject(language);
+            }
+        });
+    });
+
+    Knockout.addFunctionToModel(model, "addLanguage", function () {
+        var upwrapedObservable,
+            observable;
+
+        $("#languages").modal("hide");
+
+        upwrapedObservable = model.languageViewObject();
+        observable = Knockout.createObservable(upwrapedObservable);
+
+        model.languages.push(observable);
+    });
+
+    Knockout.addFunctionToModel(model, "updateAdditionalInformation", function () {
+        $("#additional-information").modal("hide");
+    });
+
+    Knockout.addFunctionToModel(model, "submit", function () {
+        Serializer.serializeCurriculumVitaeModel("/Home/CreateCV", $("page-wrapper"), model);
+    });
+
     ko.applyBindings(model);
 }());
+
+
+var Serializer = (function () {
+    "use strict";
+
+    var serializer = {};
+
+    serializer.createHiddenForm = function (action) {
+        return $("<form action=" + action + " role='form' id='hidden-form' style='display: none;' method='POST'></form>");
+    }
+
+    serializer.submit = function (form) {
+        form.submit();
+    }
+
+    serializer.createInput = function (name, value) {
+        return $("<input type='text' name=" + name + " value=" + value + " />");
+    }
+
+    serializer.serializeCurriculumVitaeModel = function (action, baseElement, model) {
+        var form = serializer.createHiddenForm(action).appendTo(baseElement);
+
+        serializer.createInput("PersonalInformation.FirstName", model.personalInformation().firstName).appendTo(form);
+        serializer.createInput("PersonalInformation.MiddleName", model.personalInformation().middleName).appendTo(form);
+        serializer.createInput("PersonalInformation.LastName", model.personalInformation().lastName).appendTo(form);
+        serializer.createInput("PersonalInformation.Email", model.personalInformation().email).appendTo(form);
+        serializer.createInput("PersonalInformation.DateOfBirth", model.personalInformation().dateOfBirth).appendTo(form);
+        serializer.createInput("PersonalInformation.Age", model.personalInformation().age).appendTo(form);
+        serializer.createInput("PersonalInformation.Gender", model.personalInformation().gender).appendTo(form);
+        serializer.createInput("PersonalInformation.PhoneNumber", model.personalInformation().phoneNumber).appendTo(form);
+        serializer.createInput("PersonalInformation.Address", model.personalInformation().address).appendTo(form).appendTo(form);
+        serializer.createInput("PersonalInformation.Country", model.personalInformation().country).appendTo(form);
+        serializer.createInput("PersonalInformation.Nationality", model.personalInformation().nationality).appendTo(form);
+
+        _.each(model.workExperience(), function (we, index) {
+            serializer.createInput("WorkExperience[" + index + "].Employer", we().employer).appendTo(form);
+            serializer.createInput("WorkExperience[" + index + "].Period", we().period).appendTo(form);
+            serializer.createInput("WorkExperience[" + index + "].From", we().from).appendTo(form);
+            serializer.createInput("WorkExperience[" + index + "].To", we().to).appendTo(form);
+            serializer.createInput("WorkExperience[" + index + "].Occupation", we().occupation).appendTo(form);
+            serializer.createInput("WorkExperience[" + index + "].Responsibilities", we().responsibilities).appendTo(form);
+        });
+
+        serializer.createInput("Skills.PersonalSkills", model.skills().personalSkills).appendTo(form);
+        serializer.createInput("Skills.CommunicationSkills", model.skills().communicationSkills).appendTo(form);
+        serializer.createInput("Skills.ProffesionalSkills", model.skills().proffesionalSkills).appendTo(form);
+        serializer.createInput("Skills.OtherSkills", model.skills().otherSkills).appendTo(form);
+
+        _.each(model.education(), function (education, index) {
+            serializer.createInput("Education[" + index + "].Type", education().type).appendTo(form);
+            serializer.createInput("Education[" + index + "].From", education().from).appendTo(form);
+            serializer.createInput("Education[" + index + "].SchoolName", ed().schoolName).appendTo(form);
+            serializer.createInput("Education[" + index + "].Status", education().status).appendTo(form);
+            serializer.createInput("Education[" + index + "].Qualification", education().qualification).appendTo(form);
+        });
+
+        _.each(model.certificates(), function (certificate, index) {
+            serializer.createInput("Certificates[" + index + "].DateAccuired", certificate().dateAccuired).appendTo(form);
+            serializer.createInput("Certificates[" + index + "].ValidTo", certificate().validTo).appendTo(form);
+            serializer.createInput("Certificates[" + index + "].CertificateName", certificate().name).appendTo(form);
+            serializer.createInput("Certificates[" + index + "].CertificateType", certificate().type).appendTo(form);
+        });
+
+        _.each(model.languages(), function (language, index) {
+            serializer.createInput("Languages[" + index + "].Name", language().name).appendTo(form);
+            serializer.createInput("Languages[" + index + "].SkillGroup", language().skillGroup).appendTo(form);
+            serializer.createInput("Languages[" + index + "].Speaking", language().speaking).appendTo(form);
+            serializer.createInput("Languages[" + index + "].Listening", language().listening).appendTo(form);
+            serializer.createInput("Languages[" + index + "].Reading", language().reading).appendTo(form);
+        });
+
+        serializer.createInput("AdditionalInformation", model.additionalInformation()).appendTo(form);
+
+        serializer.submit(form);
+    }
+
+    return {
+        serializeCurriculumVitaeModel: serializer.serializeCurriculumVitaeModel
+    };
+})();
