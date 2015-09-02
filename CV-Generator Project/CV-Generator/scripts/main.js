@@ -27,6 +27,7 @@ window.onload = (function () {
     Knockout.addObservableToModel(model, "educationViewObject", "");
     Knockout.addObservableToModel(model, "certificateViewObject", "");
     Knockout.addObservableToModel(model, "workExperienceViewObject", "");
+    Knockout.addObservableToModel(model, "languageViewObject", "");
 
     Knockout.addFunctionToModel(model, "updatePersonalInformation", function () {
         $("#personalInformation").modal("hide");
@@ -147,6 +148,38 @@ window.onload = (function () {
         model.workExperience.push(observable);
     });
 
+    //--------
+
+    Knockout.addFunctionToModel(model, "createLanguage", function () {
+        var observableExperience = Knockout.wrapObject(new WorkExperience());
+        model.workExperienceViewObject(observableExperience());
+    });
+
+    Knockout.addFunctionToModel(model, "updateWorkExperience", function (workExperience) {
+        model.index(0);
+
+        _.each(model.workExperience, function (existingExperience, index, workExperience) {
+            if (existingExperience.employer === workExperience.employer && existingExperience.period === workExperience.period
+                && existingExperience.from === workExperience.from && existingExperience.to === workExperience.to
+                && existingExperience.occupation === workExperience.occupation && existingExperience.responsibilities === workExperience.responsibilities) {
+                model.index(0);
+
+                model.workExperienceViewObject(workExperience);
+            }
+        });
+    });
+
+    Knockout.addFunctionToModel(model, "addWorkExperience", function () {
+        var upwrapedObservable,
+            observable;
+
+        $("#work-experience").modal("hide");
+
+        upwrapedObservable = model.workExperienceViewObject();
+        observable = Knockout.createObservable(upwrapedObservable);
+
+        model.workExperience.push(observable);
+    });
 
     ko.applyBindings(model);
 }());
