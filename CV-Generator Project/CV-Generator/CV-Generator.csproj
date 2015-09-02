@@ -190,6 +190,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PersonalInformationModels.cs" />
     <Compile Include="Models\Sex.cs" />
+    <Compile Include="Models\SkillModels.cs" />
     <Compile Include="Models\SocialMediaModels.cs" />
     <Compile Include="Models\WorkExperienceModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
