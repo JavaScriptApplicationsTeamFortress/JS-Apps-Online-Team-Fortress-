@@ -8,21 +8,24 @@
         {
             this.PersonalInformation = new PersonalInformationModels();
             this.WorkExperience = new List<WorkExperienceModels>();
+            this.Skills = new List<SkillModels>();
             this.Education = new List<EducationModels>();
             this.Certificates = new List<CertificateModels>();
             this.Languages = new List<LanguagesModels>();
             this.DrivingLicences = new List<DrivingLicenceModels>();
-            this.AdditionalInformation = new AdditionalInformationModels();
         }
 
         public string Language { get; set; }
         public byte[] PhotoBytes { get; set; }
+        public string PhotoLink{ get; set; }
+
         public PersonalInformationModels PersonalInformation { get; set; }
         public List<WorkExperienceModels> WorkExperience { get; set; }
+        public List<SkillModels> Skills { get; set; }
         public List<EducationModels> Education { get; set; } 
         public List<CertificateModels> Certificates { get; set; }
         public List<LanguagesModels> Languages { get; set; } 
         public List<DrivingLicenceModels> DrivingLicences { get; set; } 
-        public AdditionalInformationModels AdditionalInformation { get; set; }
+        public string AdditionalInformation { get; set; }
     }
 }

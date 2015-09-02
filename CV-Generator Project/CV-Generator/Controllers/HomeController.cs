@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Xml.Xsl;
 using CV_Generator.App_Start;
@@ -79,6 +80,12 @@ namespace CV_Generator.Controllers
         public ActionResult CreateCV(CurriculumVitaeModels cv)
         {
             var userId = this.User.Identity.GetUserId();
+            if (cv.PhotoBytes != null || cv.PhotoBytes.Length > 0)
+            {
+                cv.PhotoLink = GetLink(userId);
+                SaveImage(cv.PhotoLink, cv.PhotoBytes);
+            }
+            
             this.table[userId] = cv;
 
             return RedirectToAction("PreviewDocument");
@@ -87,6 +94,18 @@ namespace CV_Generator.Controllers
         private bool IsLogged()
         {
             return User.Identity != null && User.Identity.IsAuthenticated;
+        }
+
+        private string GetLink(string userId)
+        {
+            return Server.MapPath("~/images/" + userId + ".png");
+        }
+
+        private void SaveImage(string path, byte[] photo)
+        {
+            WebImage image = new WebImage(photo);
+
+            image.Save(path);
         }
     }
 
