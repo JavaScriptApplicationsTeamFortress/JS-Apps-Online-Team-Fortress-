@@ -8,7 +8,7 @@
         {
             this.PersonalInformation = new PersonalInformationModels();
             this.WorkExperience = new List<WorkExperienceModels>();
-            this.Skills = new List<SkillModels>();
+            this.Skills = new SkillModels();
             this.Education = new List<EducationModels>();
             this.Certificates = new List<CertificateModels>();
             this.Languages = new List<LanguagesModels>();
@@ -21,7 +21,7 @@
 
         public PersonalInformationModels PersonalInformation { get; set; }
         public List<WorkExperienceModels> WorkExperience { get; set; }
-        public List<SkillModels> Skills { get; set; }
+        public SkillModels Skills { get; set; }
         public List<EducationModels> Education { get; set; } 
         public List<CertificateModels> Certificates { get; set; }
         public List<LanguagesModels> Languages { get; set; } 

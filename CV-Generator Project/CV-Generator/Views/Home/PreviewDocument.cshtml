@@ -107,42 +107,10 @@
 
         @foreach (var work in Model.WorkExperience)
         {
-            <div class="employer">
-                <div>
-                    Employer
-                </div>
-
-                @if (work.Employer.Name != null)
-                {
-                    <div>Name:@work.Employer.Name</div>
-                }
-
-                @if (work.Employer.Country != null)
-                {
-                    <div>Country:@work.Employer.Country</div>
-                }
-
-                @if (work.Employer.City != null)
-                {
-                    <div>City:@work.Employer.City</div>
-                }
-
-                @if (work.Employer.Website != null)
-                {
-                    <div>Country:@work.Employer.Website</div>
-                }
-
-                <div>
-                    Recommendations
-
-                    @foreach (var recommendation in work.Employer.Recommendations)
-                {
-                        <div>
-                            Recommendation:@Html.Raw(recommendation)
-                        </div>
-                    }
-                </div>
-            </div>
+            @if (work.Employer != null)
+            {
+                <div>Employer:@work.Employer</div>
+            }
 
             @if (work.Period != null)
             {
@@ -172,28 +140,24 @@
     </div>
     <div class="Skills">
         <div>Skills:</div>
-
-        @foreach (var skill in Model.Skills)
-        {
-            @if (skill.PersonalSkills != null)
+        @if (Model.Skills.PersonalSkills != null)
             {
-                <div>Personal Skills:@skill.PersonalSkills</div>
-            }
+            <div>Personal Skills:@Model.Skills.PersonalSkills</div>
+        }
 
-            @if (skill.CommunicationSkills != null)
+        @if (Model.Skills.CommunicationSkills != null)
             {
-                <div>Communication Skills:@skill.CommunicationSkills</div>
-            }
+            <div>Communication Skills:@Model.Skills.CommunicationSkills</div>
+        }
 
-            @if (skill.ProffesionalSkills != null)
+        @if (Model.Skills.ProffesionalSkills != null)
             {
-                <div>Proffesional Skills:@skill.ProffesionalSkills</div>
-            }
+            <div>Proffesional Skills:@Model.Skills.ProffesionalSkills</div>
+        }
 
-            @if (skill.OtherSkills != null)
+        @if (Model.Skills.OtherSkills != null)
             {
-                <div>Other Skills:@skill.OtherSkills</div>
-            }
+            <div>Other Skills:@Model.Skills.OtherSkills</div>
         }
     </div>
     <div class="Education">

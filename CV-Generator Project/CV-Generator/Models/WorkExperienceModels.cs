@@ -4,10 +4,9 @@
     {
         public WorkExperienceModels()
         {
-            this.Employer = new EmployerModels();
         }
 
-        public EmployerModels Employer { get; set; }
+        public string Employer { get; set; }
         public string Period { get; set; }
         public string From { get; set; }
         public string To { get; set; }
