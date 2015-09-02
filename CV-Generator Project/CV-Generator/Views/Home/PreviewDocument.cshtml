@@ -1,55 +1,293 @@
-﻿@{
+﻿@model CV_Generator.Models.CurriculumVitaeModels;
+
+@{
     ViewBag.Title = "Preview documents";
 }
 
-<div id="page-wrapper">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1>@ViewBag.Title</h1>
-            <div class="alert alert-dismissable alert-warning">
-                <button data-dismiss="alert" class="close" type="button">&times;</button>
-              Wellcome to  @ViewBag.Title
+<section>
+    @if (Model.Language != null)
+    {
+        <div class="cvLanguage">Language:@Model.Language</div>
+    }
 
-            </div>
+    @if (Model.PhotoLink != null)
+    {
+        <div class="cvPhoto">
+            <img src="@Model.PhotoLink" alt="cv images" />
         </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <h1>See document</h1>
+    }
 
-            </div>
-            <div class="col-lg-3">
-                <h1>Document name</h1>
+    <div class="personalInformation">
+        <div>Personal Information</div>
 
+        @if (Model.PersonalInformation.FirstName != null)
+        {
+            <div class="firstName">FirstName:@Model.PersonalInformation.FirstName</div>
+        }
+
+        @if (Model.PersonalInformation.MiddleName != null)
+        {
+            <div class="middleName">MiddleName:@Model.PersonalInformation.MiddleName</div>
+        }
+
+        @if (Model.PersonalInformation.LastName != null)
+        {
+            <div class="lastName">LastName:@Model.PersonalInformation.LastName</div>
+        }
+
+        @if (Model.PersonalInformation.Email != null)
+        {
+            <div class="email">Email:@Model.PersonalInformation.Email</div>
+        }
+
+        @if (Model.PersonalInformation.DateOfBirth != null)
+        {
+            <div class="dateOfBirth">DateOfBirth:@Model.PersonalInformation.DateOfBirth</div>
+        }
+
+        @if (Model.PersonalInformation.Age > 0)
+        {
+            <div class="age">Age:@Model.PersonalInformation.Age</div>
+        }
+
+        <div class="gender">Gender:@Model.PersonalInformation.Gender.ToString()</div>
+
+        @if (Model.PersonalInformation.PhoneNumber != null)
+        {
+            <div class="phoneNumber">PhoneNumber:@Model.PersonalInformation.PhoneNumber</div>
+        }
+
+        @if (Model.PersonalInformation.Country != null)
+        {
+            <div class="country">Country:@Model.PersonalInformation.Country</div>
+        }
+
+        @if (Model.PersonalInformation.Nationality != null)
+        {
+            <div class="nationality">Nationality:@Model.PersonalInformation.Nationality</div>
+        }
+
+        @if (Model.PersonalInformation.SocialMedia.Facebook != null)
+        {
+            <div class="facebook">Facebook:@Model.PersonalInformation.SocialMedia.Facebook</div>
+        }
+
+        @if (Model.PersonalInformation.SocialMedia.Google != null)
+        {
+            <div class="google">Google:@Model.PersonalInformation.SocialMedia.Google</div>
+        }
+
+        @if (Model.PersonalInformation.SocialMedia.Twitter != null)
+        {
+            <div class="twitter">Google:@Model.PersonalInformation.SocialMedia.Twitter</div>
+        }
+
+        @if (Model.PersonalInformation.SocialMedia.Yahoo != null)
+        {
+            <div class="yahoo">Yahoo:@Model.PersonalInformation.SocialMedia.Yahoo</div>
+        }
+
+        @if (Model.PersonalInformation.SocialMedia.Linkedin != null)
+        {
+            <div class="linkedin">Linkedin:@Model.PersonalInformation.SocialMedia.Linkedin</div>
+        }
+
+        @if (Model.PersonalInformation.SocialMedia.Skype != null)
+        {
+            <div class="skype">Skype:@Model.PersonalInformation.SocialMedia.Skype</div>
+        }
+
+        @if (Model.PersonalInformation.SocialMedia.Github != null)
+        {
+            <div class="github">Github:@Model.PersonalInformation.SocialMedia.Github</div>
+        }
+    </div>
+    <div class="workExperiences">
+        <div>Work Experience</div>
+
+        @foreach (var work in Model.WorkExperience)
+        {
+            <div class="employer">
+                <div>
+                    Employer
+                </div>
+
+                @if (work.Employer.Name != null)
+                {
+                    <div>Name:@work.Employer.Name</div>
+                }
+
+                @if (work.Employer.Country != null)
+                {
+                    <div>Country:@work.Employer.Country</div>
+                }
+
+                @if (work.Employer.City != null)
+                {
+                    <div>City:@work.Employer.City</div>
+                }
+
+                @if (work.Employer.Website != null)
+                {
+                    <div>Country:@work.Employer.Website</div>
+                }
+
+                <div>
+                    Recommendations
+
+                    @foreach (var recommendation in work.Employer.Recommendations)
+                {
+                        <div>
+                            Recommendation:@Html.Raw(recommendation)
+                        </div>
+                    }
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <h3><a href="#">Link</a></h3>
 
-                </div>
-                <div class="col-lg-3">
-                    <h3>Document name</h3>
+            @if (work.Period != null)
+            {
+                <div class="period">Period:@work.Period</div>
+            }
 
-                </div>
-            </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <h3><a href="#">Link</a></h3>
+            @if (work.From != null)
+            {
+                <div class="From">From:@work.From</div>
+            }
 
-            </div>
-            <div class="col-lg-3">
-                <h3>Document name</h3>
+            @if (work.To != null)
+            {
+                <div class="To">To:@work.To</div>
+            }
 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <h3><a href="#">Link</a></h3>
+            @if (work.Occupation != null)
+            {
+                <div class="Occupation">Occupation:@work.Occupation</div>
+            }
 
-            </div>
-            <div class="col-lg-3">
-                <h3>Document name</h3>
+            @if (work.Responsibilities != null)
+            {
+                <div class="Responsibilities">Responsibilities:@work.Responsibilities</div>
+            }
+        }
+    </div>
+    <div class="Skills">
+        <div>Skills:</div>
 
-            </div>
-        </div>
-        </div>
+        @foreach (var skill in Model.Skills)
+        {
+            @if (skill.PersonalSkills != null)
+            {
+                <div>Personal Skills:@skill.PersonalSkills</div>
+            }
+
+            @if (skill.CommunicationSkills != null)
+            {
+                <div>Communication Skills:@skill.CommunicationSkills</div>
+            }
+
+            @if (skill.ProffesionalSkills != null)
+            {
+                <div>Proffesional Skills:@skill.ProffesionalSkills</div>
+            }
+
+            @if (skill.OtherSkills != null)
+            {
+                <div>Other Skills:@skill.OtherSkills</div>
+            }
+        }
+    </div>
+    <div class="Education">
+        <div>Educations:</div>
+
+        @foreach (var education in Model.Education)
+        {
+            @if (education.Type != null)
+            {
+                <div>Type:@education.Type</div>
+            }
+
+            @if (education.From != null)
+            {
+                <div>From:@education.From</div>
+            }
+
+            @if (education.From != null)
+            {
+                <div>To:@education.To</div>
+            }
+
+            @if (education.SchoolName != null)
+            {
+                <div>School Name:@education.SchoolName</div>
+            }
+
+            @if (education.Status != null)
+            {
+                <div>Status:@education.Status</div>
+            }
+
+            @if (education.Qualification != null)
+            {
+                <div>Qualification:@education.Qualification</div>
+            }
+        }
+    </div>
+    <div class="Certificate">
+        <div>Certificates:</div>
+
+        @foreach (var certificate in Model.Certificates)
+        {
+            @if (certificate.DateAccuired != null)
+            {
+                <div>Date Accuired:@certificate.DateAccuired</div>
+            }
+
+            @if (certificate.ValidTo != null)
+            {
+                <div>Valid To:@certificate.ValidTo</div>
+            }
+
+            @if (certificate.CertificateName != null)
+            {
+                <div>Certificate Name:@certificate.CertificateName</div>
+            }
+
+            @if (certificate.CertificateType != null)
+            {
+                <div>Certificate Type:@certificate.CertificateType</div>
+            }
+        }
+    </div>
+    <div class="Languages">
+        <div>Languages:</div>
+
+        @foreach (var language in Model.Languages)
+        {
+            @if (language.Name != null)
+            {
+                <div>Name:@language.Name</div>
+            }
+
+            @if (language.SkillGroup != null)
+            {
+                <div>Skill Group:@language.SkillGroup</div>
+            }
+
+            @if (language.Hearing != null)
+            {
+                <div>Hearing:@language.Hearing</div>
+            }
+
+            @if (language.Speaking != null)
+            {
+                <div>Speaking:@language.Speaking</div>
+            }
+
+            @if (language.Listening != null)
+            {
+                <div>Listening:@language.Listening</div>
+            }
+        }
+    </div>
+    <div class="additionalInformation">AdditionalInformation:@Model.AdditionalInformation</div>
+</section>
