@@ -50,6 +50,12 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/Model/extraFormGenerator.js")
     @Scripts.Render("~/Scripts/Model/indicationCurrentPage.js")
+    @Scripts.Render("~/jspm_packages/system.js")
+    @Scripts.Render("~/config.js")
     @RenderSection("scripts", required: false)
+
+    <script>
+        System.import('~/Scripts/specs/application/calculator.js');
+    </script>
 </body>
 </html>
