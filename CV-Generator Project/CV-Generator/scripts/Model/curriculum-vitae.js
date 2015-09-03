@@ -1,23 +1,14 @@
-﻿var CurriculumVitae = (function () {
+﻿var CurriculumVitae = function () {
     "use strict";
 
-    var curriculumVitae = {
-        language: null,
-        photo: null,
-        personalInformation: null, //personal information object
-        workExperience: [],
-        education: [],
-        certificates: [],
-        languages: [], //forgot to add object :c
-        drivingLicences: [],
-        additionalInformation: null //additional information object
-    };
-})();
-
-var AdditionalInformation = (function () {
-    "use strict";
-
-    var additionalInformation = {
-        text: null //free text; what you do in your free time, hobbies, sports actively practiced, etc.
-    };
-})();
+    this.personalInformation = "";
+    this.photo = "";
+    this.language = ""; 
+    this.workExperience = [];
+    this.education = [];
+    this.skills = "";
+    this.certificates = [];
+    this.languages = [];
+    this.drivingLicences = [];
+    this.additionalInformation = "";
+}

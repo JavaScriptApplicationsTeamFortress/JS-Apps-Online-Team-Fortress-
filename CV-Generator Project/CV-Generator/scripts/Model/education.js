@@ -1,25 +1,22 @@
-﻿var Education = (function () {
+﻿var Education = function () {
     "use strict";
 
-    var education = {
-        type: null, //dropdown - sredno, visshe t.n.
-        from: null,
-        to: null,
-        schoolName: null,
-        status: null, //completed, dropped, in training
-        qualification: null,
-        attachment: null //diploma in some format
-    };
-})();
+    this.type = "";
+    this.from = "";
+    this.to = "";
+    this.schoolName = "";
+    this.status = "";
+    this.qualification = "";
+}
 
-var Certificates = (function () {
+var Certificate = function () {
     "use strict";
 
-    var certificates = {
-        dateAccuired: null,
-        validTo: null,
-        certificateName: null,
-        certificateType: null,
-        attachment: null //certificate in some format
-    };
-})();
+    this.dateAccuired = "";
+    this.expirationDate = "";
+    this.period = "";
+    this.name = "";
+    this.type = "";
+    this.organization = "";
+    this.attachment = "";
+}

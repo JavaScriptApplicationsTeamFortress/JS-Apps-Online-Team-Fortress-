@@ -1,0 +1,741 @@
+﻿@{
+    ViewBag.Title = "Add CV";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@Styles.Render("~/Content/font-awesome.min.css")
+@Styles.Render("~/Content/shareButtonsStyle.css")
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Dashboard</h1>
+            <div class="alert alert-dismissable alert-warning">
+                <button data-dismiss="alert" class="close" type="button">&times;</button>
+                Welcome to the CV section!
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="aditionalInfo">
+        <div data-bind='if: personalInformation() == ""'>
+            <div class="col-lg-12" data-bind="visible: personalInformation().firstName == undefined">
+                <h1>No personal information added.</h1>
+            </div>
+        </div>
+
+        <div data-bind='ifnot: personalInformation() == ""'>
+            <div class="col-lg-12" data-bind="visible: personalInformation().firstName != undefined">
+                <h1> Personal Info: </h1>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">First name: </label>
+                        <label class="col-lg-4" data-bind="text: personalInformation().firstName"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Surname: </label>
+                        <label class="col-lg-4" data-bind="text: personalInformation().middleName"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Family name: </label>
+                        <label class="col-lg-4" data-bind="text: personalInformation().lastName"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Date of birth: </label>
+                        <label class="col-lg-4" data-bind="text: personalInformation().dateOfBirth"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Age: </label>
+                        <label class="col-lg-4" data-bind="text: personalInformation().age"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">E-mail: </label>
+                        <label class="col-lg-4" data-bind="text: personalInformation().email"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Gender: </label>
+                        <label class="col-lg-2" data-bind="text: personalInformation().gender"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Phone number: </label>
+                        <label class="col-lg-4" data-bind="text: personalInformation().phoneNumber"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Street: </label>
+                        <label class="col-lg-6" data-bind="text: personalInformation().address"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Nationality: </label>
+                        <label class="col-lg-4" data-bind="text: personalInformation().nationality"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Country: </label>
+                        <label class="col-lg-4" data-bind="text: personalInformation().country"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#personalInformation" data-bind="click: $root.createPersonInformation">
+            Change
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="personalInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fill your personal information</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>First name</label>
+                            <input class="form-control" placeholder="Your first name" data-bind="value: personalInformation().firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Surname</label>
+                            <input class="form-control" placeholder="Your surname" data-bind="value: personalInformation().middleName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Family name</label>
+                            <input class="form-control" placeholder="Your family name" data-bind="value: personalInformation().lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of birth</label>
+                            <input class="form-control" placeholder="Your date of birth" data-bind="value: personalInformation().dateOfBirth" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input class="form-control" placeholder="Your age" data-bind="value: personalInformation().age" required>
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input class="form-control" placeholder="example@mail.com" data-bind="value: personalInformation().email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <input class="form-control" placeholder="Your gender" data-bind="value: personalInformation().gender" required>
+                            @*<select></select>*@
+                        </div>
+                        <div class="form-group">
+                            <label>Phone number</label>
+                            <input class="form-control" placeholder="Your phone number" data-bind="value: personalInformation().phoneNumber">
+                        </div>
+                        <div class="form-group">
+                            <label>Street</label>
+                            <input class="form-control" placeholder="Street name and number" data-bind="value: personalInformation().address">
+                        </div>
+                        <div class="form-group">
+                            <label>Nationality</label>
+                            <input class="form-control" placeholder="Your nationality" data-bind="value: personalInformation().nationality">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input class="form-control" placeholder="Your country" data-bind="value: personalInformation().country">
+                        </div>
+                        @*<div class="form-control">
+                                <label>Social media</label>
+                                <input class="form-control" placeholder="todo fix">
+                            </div>*@
+                    </div>
+                    <div class="modal-footer">
+                        @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                        <button type="button" class="btn btn-primary" id="pi-save-changes" data-bind="click: updatePersonalInformation">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
+    </div>
+
+    <br>
+
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12" data-bind="visible: education().length  == 0">
+            <h1>No education added.</h1>
+        </div>
+        <div class="col-lg-12" data-bind="visible: education().length > 0">
+            <h1> Еducation and training: </h1>
+            <div data-bind="foreach: education">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Type: </label>
+                        <label class="col-lg-4" data-bind="text: type"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">From: </label>
+                        <label class="col-lg-4" data-bind="text: from"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">To: </label>
+                        <label class="col-lg-4" data-bind="text: to"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">School name: </label>
+                        <label class="col-lg-4" data-bind="text: schoolName"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Status: </label>
+                        <label class="col-lg-4" data-bind="text: status"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Qualification: </label>
+                        <label class="col-lg-4" data-bind="text: qualification"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#educationAndTraining" data-bind="click: $parent.updateEducation">
+                        Update education
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#educationAndTraining" data-bind="click: $root.createEducation">
+            Add education
+        </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="educationAndTraining" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Еducation and training</h4>
+                </div>
+                <div class="modal-body" data-bind='if: educationViewObject() != ""'>
+                    <div class="form-group">
+                        <label>Education type</label>
+                        <input class="form-control" placeholder="Education type" data-bind="value: educationViewObject().type">
+                    </div>
+                    <div class="form-group">
+                        <label>From date</label>
+                        <input class="form-control" placeholder="From date" data-bind="value: educationViewObject().from">
+                    </div>
+                    <div class="form-group">
+                        <label>To date</label>
+                        <input class="form-control" placeholder="To date" data-bind="value: educationViewObject().to">
+                    </div>
+                    <div class="form-group">
+                        <label>Qualification</label>
+                        <input class="form-control" placeholder="Your specialty" data-bind="value: educationViewObject().qualification">
+                    </div>
+                    <div class="form-group">
+                        <label>Your School name</label>
+                        <input class="form-control" placeholder="Enter name of your school" data-bind="value: educationViewObject().schoolName">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <input class="form-control" placeholder="Status" data-bind="value: educationViewObject().status">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bind="click: $root.addEducation">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal -->
+
+    <div class="row" id="aditionalInfo">
+        <div class="col-lg-12" data-bind="visible: certificates().length == 0">
+            <h1>No certificates added.</h1>
+        </div>
+
+        <div class="col-lg-12" data-bind="visible: certificates().length > 0">
+            <h1>Certificates: </h1>
+            <div data-bind="foreach: certificates">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Date accuired: </label>
+                        <label class="col-lg-2" data-bind="text: dateAccuired"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Expiration date: </label>
+                        <label class="col-lg-2" data-bind="text: expirationDate"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Period: </label>
+                        <label class="col-lg-4" data-bind="text: period"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Certificate name: </label>
+                        <label class="col-lg-6" data-bind="text: name"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Certificate type: </label>
+                        <label class="col-lg-4" data-bind="text: type"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="col-lg-2">Certificate organization: </label>
+                        <label class="col-lg-6" data-bind="text: organization"></label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#certificates" data-bind="click: $parent.updateCertificate">
+                        Update certificate
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#certificates" data-bind="click: $root.createCertificate">Add certificate</button>
+
+        <div class="modal fade" id="certificates" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fill your skills</h4>
+                    </div>
+                    <div class="modal-body" data-bind='if: certificateViewObject() != ""'>
+                        <div class="form-group">
+                            <label>Date accuired</label>
+                            <input class="form-control" placeholder="Date accuired" data-bind="value: certificateViewObject().dateAccuired">
+                        </div>
+                        <div class="form-group">
+                            <label>Expiration date</label>
+                            <input class="form-control" placeholder="Expiration date" data-bind="value: certificateViewObject().expirationDate">
+                        </div>
+                        <div class="form-group">
+                            <label>Period</label>
+                            <input class="form-control" placeholder="Period" data-bind="value: certificateViewObject().period">
+                        </div>
+                        <div class="form-group">
+                            <label>Certificate name</label>
+                            <input class="form-control" placeholder="Name" data-bind="value: certificateViewObject().name">
+                        </div>
+                        <div class="form-group">
+                            <label>Certificate type</label>
+                            <input class="form-control" placeholder="Type" data-bind="value: certificateViewObject().type">
+                        </div>
+                        <div class="form-group">
+                            <label>Certificate organization</label>
+                            <input class="form-control" placeholder="Organization" data-bind="value: certificateViewObject().organization">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-bind="click: $root.addCertificate">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row" id="aditionalInfo">
+            <div class="col-lg-12" data-bind="visible: workExperience().length == 0">
+                <h1>No working experience added.</h1>
+            </div>
+            <div class="col-lg-12" data-bind="visible: workExperience().length > 0">
+                <h1> Work experience: </h1>
+                <div data-bind="foreach: workExperience">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Employer name: </label>
+                            <label class="col-lg-4" data-bind="text: employer"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Period: </label>
+                            <label class="col-lg-4" data-bind="text: period"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">From: </label>
+                            <label class="col-lg-4" data-bind="text: from"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">To: </label>
+                            <label class="col-lg-4" data-bind="text: to"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Occupation: </label>
+                            <label class="col-lg-4" data-bind="text: occupation"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Responsibilities: </label>
+                            <label class="col-lg-6" data-bind="text: responsibilities"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#work-experience" data-bind="click: $parent.updateWorkExperience"> Update work experience </button>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#work-experience" data-bind="click: $root.createWorkExperience">Add work experience</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="work-experience" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Working experience</h4>
+                    </div>
+                    <div class="modal-body" data-bind='if: workExperienceViewObject() != ""'>
+                        <div class="form-group">
+                            <label>Employer name</label>
+                            <input class="form-control" placeholder="Employer name" data-bind="value: workExperienceViewObject().employer">
+                        </div>
+                        <div class="form-group">
+                            <label>Period</label>
+                            <input class="form-control" placeholder="Period" data-bind="value: workExperienceViewObject().period">
+                        </div>
+                        <div class="form-group">
+                            <label>From data</label>
+                            <input class="form-control" placeholder="From data" data-bind="value: workExperienceViewObject().from">
+                        </div>
+                        <div class="form-group">
+                            <label>To data</label>
+                            <input class="form-control" placeholder="To data" data-bind="value: workExperienceViewObject().to">
+                        </div>
+                        <div class="form-group">
+                            <label>Occupation</label>
+                            <input class="form-control" placeholder="Occupation" data-bind="value: workExperienceViewObject().occupation">
+                        </div>
+                        <div class="form-group">
+                            <label>Responsibilities</label>
+                            <textarea class="form-control" rows="3" data-bind="value: workExperienceViewObject().responsibilities"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-bind="click: $root.addWorkExperience">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
+        <br>
+
+        <div class="row" id="aditionalInfo">
+            <div data-bind='if: skills() == ""'>
+                <div class="col-lg-12" data-bind='visible: skills() == ""'>
+                    <h1>No skills added.</h1>
+                </div>
+            </div>
+
+            <div data-bind='ifnot: skills() == ""'>
+                <div class="col-lg-12" data-bind='visibile: skills() != ""'>
+                    <h1> Skills: </h1>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Personal skills: </label>
+                            <label class="col-lg-6" data-bind="text: skills().personalSkills"></label>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="col-lg-2">Communication skills: </label>
+                                <label class="col-lg-6" data-bind="text: skills().communicationSkills"></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="col-lg-2">Proffesional skills: </label>
+                                <label class="col-lg-6" data-bind="text: skills().proffesionalSkills"></label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="col-lg-2">Other skills: </label>
+                                <label class="col-lg-6" data-bind="text: skills().otherSkills"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#skills" data-bind="click: $root.createSkills">Change</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="skills" tabindex="-1" role="dialog" aria-labelledby="motherLanguage">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fill your skills</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Personal skills</label>
+                            <textarea class="form-control" rows="5" data-bind="value: skills().personalSkills"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Communication Skills</label>
+                            <textarea class="form-control" rows="5" data-bind="value: skills().communicationSkills"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Proffesional skills</label>
+                            <textarea class="form-control" rows="5" data-bind="value: skills().proffesionalSkills"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Other skills</label>
+                            <textarea class="form-control" rows="5" data-bind="value: skills().otherSkills"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bind="click: $root.updateSkills">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="aditionalInfo">
+            <div class="col-lg-12" data-bind="visible: languages().length == 0">
+                <h1>No foreign languages added.</h1>
+            </div>
+
+            <div class="col-lg-12" data-bind="visible: languages().length > 0">
+                <h1>Foreign languages</h1>
+                <div data-bind="foreach: languages">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Name: </label>
+                            <label class="col-lg-4" data-bind="text: name"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Skill group: </label>
+                            <label class="col-lg-4" data-bind="text: skillGroup"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Listening: </label>
+                            <label class="col-lg-4" data-bind="text: listening"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Reading: </label>
+                            <label class="col-lg-4" data-bind="text: reading"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Speaking: </label>
+                            <label class="col-lg-4" data-bind="text: speaking"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#languages" data-bind="click: $parent.updateLanguage"> Update language </button>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#languages" data-bind="click: createLanguage">Add language</button>
+        </div>
+
+        <div class="modal fade" id="languages" tabindex="-1" role="dialog" aria-labelledby="motherLanguage">
+            <div div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fill your skills</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input class="form-control" placeholder="Name" data-bind="value: languageViewObject().name">
+                        </div>
+                        <div class="form-group">
+                            <label>Skill group</label>
+                            <input class="form-control" placeholder="Skill group" data-bind="value: languageViewObject().skillGroup">
+                        </div>
+                        <div class="form-group">
+                            <label>Listening</label>
+                            <input class="form-control" placeholder="Listening" data-bind="value: languageViewObject().listening">
+                        </div>
+                        <div class="form-group">
+                            <label>Reading</label>
+                            <input class="form-control" placeholder="Reading" data-bind="value: languageViewObject().reading">
+                        </div>
+                        <div class="form-group">
+                            <label>Speaking</label>
+                            <input class="form-control" placeholder="Speaking" data-bind="value: languageViewObject().speaking">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-bind="click: $root.addLanguage">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="aditionalInfo">
+            <div data-bind='if: additionalInformation() == ""'>
+                <div class="col-lg-12" data-bind='visible: additionalInformation() == ""'>
+                    <h1>No additional information added.</h1>
+                </div>
+            </div>
+
+            <div data-bind='ifnot: additionalInformation() == ""'>
+                <div class="col-lg-12" data-bind='visibile: additionalInformation() != ""'>
+                    <h1> Additional information: </h1>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="col-lg-2">Text: </label>
+                            <label class="col-lg-6" data-bind="text: additionalInformation"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#additional-information">Change</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="additional-information" tabindex="-1" role="dialog" aria-labelledby="motherLanguage">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fill your skills</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Additional Information</label>
+                            <textarea class="form-control" rows="5" data-bind="value: additionalInformation"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bind="click: $root.updateAdditionalInformation">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    @*TEMPLATE!!!*@
+
+    @*<div class="row" id="aditionalInfo">
+
+            <h1>Driving licences</h1>
+
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#skills"> Change </button>
+        </div>
+
+        <div class="modal fade" id="skills" tabindex="-1" role="dialog" aria-labelledby="motherLanguage">
+            <div div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fill your skills</h4>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    <!-- end modal -->
+</div>
+
+<div id="shareButtonsWrapper">
+    <button type="button" class="btn btn-primary" id="saveChangesButton" data-bind="click: $root.submit">Save CV</button>
+    <br />
+    <button type="button" class="btn btn-primary">Share to:</button>
+
+    <!-- Social Button HTML -->
+    <!-- Twitter -->
+    <a href="http://twitter.com/share?url=<URL>&text=<TEXT>&via=<VIA>" target="_blank" class="share-btn twitter">
+        <i class="fa fa-twitter"></i>
+    </a>
+
+    <!-- Google Plus -->
+    <a href="https://plus.google.com/share?url=<BTN>" target="_blank" class="share-btn google-plus">
+        <i class="fa fa-google-plus"></i>
+    </a>
+
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer/sharer.php?u=<URL>" target="_blank" class="share-btn facebook">
+        <i class="fa fa-facebook"></i>
+    </a>
+
+    <!-- StumbleUpon (url, title) -->
+    <a href="http://www.stumbleupon.com/submit?url=<URL>&title=<TITLE>" target="_blank" class="share-btn stumbleupon">
+        <i class="fa fa-stumbleupon"></i>
+    </a>
+
+    <!-- Reddit (url, title) -->
+    <a href="http://reddit.com/submit?url=<URL>&title=<TITLE>" target="_blank" class="share-btn reddit">
+        <i class="fa fa-reddit"></i>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="http://www.linkedin.com/shareArticle?url=<URL>&title=<TITLE>&summary=<SUMMARY>&source=<SOURCE_URL>" target="_blank" class="share-btn linkedin">
+        <i class="fa fa-linkedin"></i>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:?subject=<SUBJECT&body=<BODY>" target="_blank" class="share-btn email">
+        <i class="fa fa-envelope"></i>
+    </a>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/scripts/Model/skills.js"></script>
+    <script src="~/scripts/Model/languages.js"></script>
+    <script src="~/scripts/Model/driving-licences.js"></script>
+    <script src="~/scripts/Model/education.js"></script>
+    <script src="~/scripts/Model/work-experience.js"></script>
+    <script src="~/scripts/Model/personal-information.js"></script>
+    <script src="~/scripts/Model/curriculum-vitae.js"></script>
+    <script src="~/scripts/knockout-3.3.0.debug.js"></script>
+    <script src="~/scripts/underscore-min.js"></script>
+    <script src="~/scripts/curriculum-vitae-ko-model.js"></script>
+    <script src="~/scripts/main.js"></script>
+}
