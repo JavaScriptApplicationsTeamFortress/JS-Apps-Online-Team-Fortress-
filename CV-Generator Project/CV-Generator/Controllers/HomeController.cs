@@ -80,15 +80,20 @@ namespace CV_Generator.Controllers
         public ActionResult CreateCV(CurriculumVitaeModels cv)
         {
             var userId = this.User.Identity.GetUserId();
-            if (cv.PhotoBytes != null || cv.PhotoBytes.Length > 0)
+
+            if (cv.PhotoBytes != null)
             {
-                cv.PhotoLink = GetLink(userId);
-                SaveImage(cv.PhotoLink, cv.PhotoBytes);
+                if (cv.PhotoBytes != null || cv.PhotoBytes.Length > 0)
+                {
+                    cv.PhotoLink = GetLink(userId);
+                    SaveImage(cv.PhotoLink, cv.PhotoBytes);
+                }
             }
             
             this.table[userId] = cv;
 
-            return RedirectToAction("PreviewDocument");
+            return Json(userId, JsonRequestBehavior.AllowGet);
+            //return RedirectToAction("PreviewDocument");
         }
 
         private bool IsLogged()
