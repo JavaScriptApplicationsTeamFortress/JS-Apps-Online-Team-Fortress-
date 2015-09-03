@@ -1,4 +1,4 @@
-﻿@model CV_Generator.Models.CurriculumVitaeModels;
+﻿@model CV_Generator.Models.CurriculumVitaeModels
 
 @{
     ViewBag.Title = "Preview documents";
@@ -107,32 +107,32 @@
 
         @foreach (var work in Model.WorkExperience)
         {
-            @if (work.Employer != null)
+            if (work.Employer != null)
             {
                 <div>Employer:@work.Employer</div>
             }
 
-            @if (work.Period != null)
+            if (work.Period != null)
             {
                 <div class="period">Period:@work.Period</div>
             }
 
-            @if (work.From != null)
+            if (work.From != null)
             {
                 <div class="From">From:@work.From</div>
             }
 
-            @if (work.To != null)
+            if (work.To != null)
             {
                 <div class="To">To:@work.To</div>
             }
 
-            @if (work.Occupation != null)
+            if (work.Occupation != null)
             {
                 <div class="Occupation">Occupation:@work.Occupation</div>
             }
 
-            @if (work.Responsibilities != null)
+            if (work.Responsibilities != null)
             {
                 <div class="Responsibilities">Responsibilities:@work.Responsibilities</div>
             }
@@ -165,32 +165,32 @@
 
         @foreach (var education in Model.Education)
         {
-            @if (education.Type != null)
+            if (education.Type != null)
             {
                 <div>Type:@education.Type</div>
             }
 
-            @if (education.From != null)
+            if (education.From != null)
             {
                 <div>From:@education.From</div>
             }
 
-            @if (education.From != null)
+            if (education.From != null)
             {
                 <div>To:@education.To</div>
             }
 
-            @if (education.SchoolName != null)
+            if (education.SchoolName != null)
             {
                 <div>School Name:@education.SchoolName</div>
             }
 
-            @if (education.Status != null)
+            if (education.Status != null)
             {
                 <div>Status:@education.Status</div>
             }
 
-            @if (education.Qualification != null)
+            if (education.Qualification != null)
             {
                 <div>Qualification:@education.Qualification</div>
             }
@@ -201,22 +201,22 @@
 
         @foreach (var certificate in Model.Certificates)
         {
-            @if (certificate.DateAccuired != null)
+            if (certificate.DateAccuired != null)
             {
                 <div>Date Accuired:@certificate.DateAccuired</div>
             }
 
-            @if (certificate.ValidTo != null)
+            if (certificate.ValidTo != null)
             {
                 <div>Valid To:@certificate.ValidTo</div>
             }
 
-            @if (certificate.CertificateName != null)
+            if (certificate.CertificateName != null)
             {
                 <div>Certificate Name:@certificate.CertificateName</div>
             }
 
-            @if (certificate.CertificateType != null)
+            if (certificate.CertificateType != null)
             {
                 <div>Certificate Type:@certificate.CertificateType</div>
             }
@@ -227,27 +227,27 @@
 
         @foreach (var language in Model.Languages)
         {
-            @if (language.Name != null)
+            if (language.Name != null)
             {
                 <div>Name:@language.Name</div>
             }
 
-            @if (language.SkillGroup != null)
+            if (language.SkillGroup != null)
             {
                 <div>Skill Group:@language.SkillGroup</div>
             }
 
-            @if (language.Reading != null)
+            if (language.Reading != null)
             {
                 <div>Reading:@language.Reading</div>
             }
 
-            @if (language.Speaking != null)
+            if (language.Speaking != null)
             {
                 <div>Speaking:@language.Speaking</div>
             }
 
-            @if (language.Listening != null)
+            if (language.Listening != null)
             {
                 <div>Listening:@language.Listening</div>
             }

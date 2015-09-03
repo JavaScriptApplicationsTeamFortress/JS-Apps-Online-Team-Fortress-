@@ -1,0 +1,52 @@
+﻿.share-btn {
+display: inline-block;
+color: #ffffff;
+border: none;
+padding: 0.5em;
+width: 4em;
+box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+outline: none;
+text-align: center;
+}
+
+.share-btn:hover {
+color: #eeeeee;
+}
+
+.share-btn:active {
+position: relative;
+top: 2px;
+box-shadow: none;
+color: #e2e2e2;
+outline: none;
+}
+
+.share-btn.twitter     { background: #55acee; }
+.share-btn.google-plus { background: #dd4b39; }
+.share-btn.facebook    { background: #3B5998; }
+.share-btn.linkedin    { background: #4875B4; }
+.share-btn.email       { background: #444444; }
+
+#shareButtonsWrapper :hover {
+opacity: 0.1;
+}
+
+#saveChangesButton {
+margin-bottom: 27px;
+}
+
+#shareButtonsWrapper button {
+height: 37px;
+background-color: #ff8800;
+border-color: #f05800;
+}
+
+#shareButtonsWrapper a {
+height: 37px;
+border-radius: 5px;
+}
+
+/*#personal-info-container {
+border: 1px solid #2a9fd6;
+border-radius:5px;
+}*/
