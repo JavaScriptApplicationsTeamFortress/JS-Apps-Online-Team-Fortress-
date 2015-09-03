@@ -1,9 +1,12 @@
-﻿"use strict";
+﻿/*globals describe, it, require, before, beforeEach, global, $*/
+"use strict";
 //var chai = require("chai");
 //var sinon = require("sinon");
 //var sinonChai = require("sinon-chai");
 //var expect = chai.expect;
 //chai.use(sinonChai);
+
+var jq = require('jquery');
 
 var expect = chai.expect,
     objectModel = ("~/Scripts/Model/personal-information.js");
