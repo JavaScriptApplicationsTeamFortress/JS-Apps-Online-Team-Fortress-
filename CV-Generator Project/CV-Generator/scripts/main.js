@@ -1,9 +1,11 @@
 window.onload = (function () {
     'use strict';
 
-    var cv = new CurriculumVitae();
+    var cv,
+        model;
 
-    var model = Knockout.createModel(cv);
+    cv = new CurriculumVitae();
+    model = Knockout.createModel(cv);
 
     Knockout.addObservableToModel(model, "index", 0);
     Knockout.addObservableToModel(model, "educationViewObject", "");

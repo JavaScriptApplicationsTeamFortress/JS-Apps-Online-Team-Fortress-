@@ -1,14 +1,14 @@
 ﻿var CurriculumVitae = function () {
     "use strict";
 
-    this.personalInformation = ""; //done
+    this.personalInformation = "";
     this.photo = "";
     this.language = ""; 
-    this.workExperience = []; //done
-    this.education = []; //done
-    this.skills = ""; //done
-    this.certificates = []; //done
+    this.workExperience = [];
+    this.education = [];
+    this.skills = "";
+    this.certificates = [];
     this.languages = [];
-    this.drivingLicences = []; //done
+    this.drivingLicences = [];
     this.additionalInformation = "";
 }

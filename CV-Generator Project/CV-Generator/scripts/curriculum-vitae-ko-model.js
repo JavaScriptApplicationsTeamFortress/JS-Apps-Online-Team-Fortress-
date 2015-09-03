@@ -18,7 +18,6 @@
         }
 
         if (Type.isObject(object)) {
-            //return knockout.wrapObject(object);
             keys = Object.keys(object);
             observableObject = {};
 
