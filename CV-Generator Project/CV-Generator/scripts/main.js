@@ -26,7 +26,7 @@ window.onload = (function () {
         var observable;
 
         if (model.personalInformation() == "") {
-            observable = Knockout.wrapObject(new PersonalInformation());
+            observable = Knockout.wrapObject(new info.personalInformation());
             model.personalInformation(observable());
         }
     });
