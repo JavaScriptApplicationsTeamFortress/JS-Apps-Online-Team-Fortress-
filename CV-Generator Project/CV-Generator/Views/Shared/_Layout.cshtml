@@ -50,12 +50,18 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/Model/extraFormGenerator.js")
     @Scripts.Render("~/Scripts/Model/indicationCurrentPage.js")
-    @Scripts.Render("~/jspm_packages/system.js")
-    @Scripts.Render("~/config.js")
+    @Scripts.Render("~/Scripts/require.js")
     @RenderSection("scripts", required: false)
 
+    @*<script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/require.js"></script>
+    @Scripts.Render("~/jspm_packages/system.js")
+    @Scripts.Render("~/config.js")
+    <script src="~/jspm_packages/system.js"></script>
+    <script src="~/config.js"></script>*@
+
     <script>
-        System.import('~/Scripts/specs/application/calculator.js');
+        System.import("~/Scripts/specs/application/calculator.js");
     </script>
 </body>
 </html>

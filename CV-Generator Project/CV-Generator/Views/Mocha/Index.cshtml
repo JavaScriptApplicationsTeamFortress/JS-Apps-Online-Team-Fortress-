@@ -13,6 +13,10 @@
     <script src="@Url.Content("~/Scripts/specs/bdd/sinon.js")"></script>
     <script src="@Url.Content("~/Scripts/specs/bdd/fixtures.js")"></script>
     <script src="@Url.Content("~/Scripts/specs/bdd/sinon-chai.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/require.js")"></script>
+    @*<script src="@Url.Content("~/jspm_packages/system.js")"></script>*@
+    @*<script src="@Url.Content("~/config.js")"></script>*@
     <script>mocha.setup('bdd')</script>
 
     <!-- include your files here -->
@@ -22,9 +26,14 @@
 </head>
 <body>
     <div id="mocha"></div>
+@*<script>
+    System.import("~/Scripts/specs/application/calculator.js");
+</script>*@
+
     <script>
         fixtures.path = '@Url.Content("~/Scripts/specs/fixtures")';
         mocha.run();
     </script>
+
 </body>
 </html>

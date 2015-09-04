@@ -1,4 +1,5 @@
-﻿/*globals describe, it, require, before, beforeEach, global, $*/
+﻿
+/*globals describe, it, require, before, beforeEach, global, $*/
 "use strict";
 //var chai = require("chai");
 //var sinon = require("sinon");
@@ -6,10 +7,13 @@
 //var expect = chai.expect;
 //chai.use(sinonChai);
 
-var jq = require('jquery');
+var jq = require['jquery'];
+var jsdom = require['jsdom'];
+
+//import info  from '../../Model/personal-information.js';
 
 var expect = chai.expect,
-    objectModel = ("~/Scripts/Model/personal-information.js");
+    cvInfo = info.personalInformation;
 
 describe('Test CV', function () {
     var CONSTANTS = {
@@ -54,27 +58,28 @@ describe('Test CV', function () {
 
     describe('calculator', function () {
         var Person = function () {
-            var person = Object.create.objectModel(
-                    CONSTANTS.VALID.firstName,
-                    CONSTANTS.VALID.middleName,
-                    CONSTANTS.VALID.lastName,
-                    CONSTANTS.VALID.email,
-                    CONSTANTS.VALID.city,
-                    CONSTANTS.VALID.dateOfBirth,
-                    CONSTANTS.VALID.age,
-                    CONSTANTS.VALID.gender,
-                    CONSTANTS.VALID.phoneNumber,
-                    CONSTANTS.VALID.country,
-                    CONSTANTS.VALID.SocialMedia);
+            var person = Object.create.cvInfo({
+                firstName: CONSTANTS.VALID.firstName,
+                middleName:CONSTANTS.VALID.middleName,
+                lastName:CONSTANTS.VALID.lastName,
+                email:CONSTANTS.VALID.email,
+                city:CONSTANTS.VALID.city,
+                dateOfBirth:CONSTANTS.VALID.dateOfBirth,
+                age:CONSTANTS.VALID.age,
+                gender:CONSTANTS.VALID.gender,
+                phoneNumber:CONSTANTS.VALID.phoneNumber,
+                country:CONSTANTS.VALID.country
+            });
 
            
             
             return person;
         }
 
-       // console.log(Person.PersonalInformation.firstName);
+        cvInfo.firstName = 'John';
+        console.log(cvInfo.firstName);
 
-        // ChaiJS
+        
         it('adds', function () {
             expect(1 + 1).to.equal(2);
         });
@@ -84,15 +89,15 @@ describe('Test CV', function () {
             expect(2 + 2).to.have.been.equal(4);
         });
 
-        // SinonJS
+        
         it('1. Expect person to be a function.', function () {
-            expect(Person).to.have.been.a('function');
+            expect(cvInfo).to.be.a('function');
         });
 
         it('2. Expect first name is valid', function () {
             var fname = 'John';
-            console.log(Person.firstName);
-            expect(Person.firstName).to.have.been.an.equal(fname);
+            cvInfo.firstName = 'John';
+            expect(cvInfo.firstName).to.have.been.an.equal(fname);
         })
     });
 })

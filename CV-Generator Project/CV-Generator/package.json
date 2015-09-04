@@ -12,5 +12,11 @@
       "babel-runtime": "npm:babel-runtime@^5.8.20",
       "core-js": "npm:core-js@^1.1.0"
     }
+  },
+  "devDependencies": {
+    "io.js": "0.0.0",
+    "jsdom": "^6.3.0",
+    "mocha": "^2.3.0",
+    "mocha-jsdom": "^1.0.0"
   }
 }
