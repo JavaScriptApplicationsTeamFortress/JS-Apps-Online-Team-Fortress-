@@ -6,12 +6,12 @@
 This document describes the teamwork assignment for Telerik Academy students in "JavaScript Applications" course
 
 #Team members
-Илия Неделчев
-Кристиан Карабельов
-Тодор Даков
-Иван Инджов
-Петя Мечкова
-Йордан Вълков
+* Илия Неделчев
+* Кристиан Карабельов
+* Тодор Даков
+* Иван Инджов
+* Петя Мечкова
+* Йордан Вълков
 
 #Project Description
 
