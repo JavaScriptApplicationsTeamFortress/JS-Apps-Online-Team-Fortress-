@@ -75,6 +75,8 @@ describe('Test CV', function () {
                 country: CONSTANTS.VALID.country
             });
 
+
+
             return person;
         }
 
@@ -116,12 +118,17 @@ describe('Test CV', function () {
 
     });
 
+
+    // -------------------------------------------------------------------------------
+
+
     var myapi = {
         get: function (callback) {
             var xhr = new XMLHttpRequest();
 
             // xhr.open('GET', 'http://jsonplaceholder.typicode.com/posts/1', true);
             xhr.open('GET', 'http://http://localhost:25583/Mocha/Index', true);
+
 
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
@@ -152,6 +159,7 @@ describe('Test CV', function () {
         }
     };
 
+
     chai.should();
 
     describe('MyAPI', function () {
@@ -167,7 +175,9 @@ describe('Test CV', function () {
         afterEach(function () {
             this.xhr.restore();
         });
-        
+
+
+        //Tests etc. go here
         it('1.should parse fetched data as JSON', function (done) {
             var data = { foo: 'bar' };
             var dataJson = JSON.stringify(data);
