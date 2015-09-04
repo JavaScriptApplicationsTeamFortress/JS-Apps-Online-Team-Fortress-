@@ -1,11 +1,17 @@
  <p align="center"><a href="http://telerikacademy.com//"><img src="https://github.com/tddold/Telerik-Academy/blob/master/Programming%20with%20C%23/1.%20C%23%20Fundamentals%20I/Presentation/Telerik.png" /></a></p>
  
 -<h1 align="center">JS Apps Online Team "Fortress"</h1>
-
-#JavaScript Applications: Teamwork Assignment
 *****************************************
 
 This document describes the teamwork assignment for Telerik Academy students in "JavaScript Applications" course
+
+#Team members
+Илия Неделчев
+Кристиан Карабельов
+Тодор Даков
+Иван Инджов
+Петя Мечкова
+Йордан Вълков
 
 #Project Description
 
