@@ -204,8 +204,6 @@
     <Content Include="Content\mocha.css" />
     <Content Include="Content\progress.css" />
     <Content Include="Content\shareButtonsStyle.css" />
-    <Content Include="css\font-awesome.css" />
-    <Content Include="css\font-awesome.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
