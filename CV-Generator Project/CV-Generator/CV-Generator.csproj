@@ -279,8 +279,6 @@
     <Content Include="jspm_packages\npm\core-js%401.1.3\.npmignore" />
     <Content Include="jspm_packages\npm\core-js%401.1.3\.travis.yml" />
     <Content Include="jspm_packages\npm\core-js%401.1.3\bower.json" />
-    <Content Include="jspm_packages\npm\core-js%401.1.3\build\build.ls" />
-    <Content Include="jspm_packages\npm\core-js%401.1.3\build\Gruntfile.ls" />
     <Content Include="jspm_packages\npm\core-js%401.1.3\client\core.min.js.map" />
     <Content Include="jspm_packages\npm\core-js%401.1.3\client\library.min.js.map" />
     <Content Include="jspm_packages\npm\core-js%401.1.3\client\shim.min.js.map" />
@@ -714,9 +712,6 @@
     <Content Include="jspm_packages\npm\babel-runtime%405.8.20\regenerator\index.js" />
     <Content Include="jspm_packages\npm\babel-runtime%405.8.20\regenerator\runtime.js" />
     <Content Include="jspm_packages\npm\core-js%401.1.3.js" />
-    <Content Include="jspm_packages\npm\core-js%401.1.3\build.js" />
-    <Content Include="jspm_packages\npm\core-js%401.1.3\build\config.js" />
-    <Content Include="jspm_packages\npm\core-js%401.1.3\build\index.js" />
     <Content Include="jspm_packages\npm\core-js%401.1.3\client\core.js" />
     <Content Include="jspm_packages\npm\core-js%401.1.3\client\core.min.js" />
     <Content Include="jspm_packages\npm\core-js%401.1.3\client\library.js" />
