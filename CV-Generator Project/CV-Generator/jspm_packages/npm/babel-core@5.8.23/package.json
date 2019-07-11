@@ -58,7 +58,7 @@
     "json5": "^0.4.0",
     "line-numbers": "0.2.0",
     "lodash": ">=4.17.13",
-    "minimatch": "^2.0.3",
+    "minimatch": ">=3.0.2",
     "output-file-sync": "^1.1.0",
     "path-exists": "^1.0.0",
     "path-is-absolute": "^1.0.0",
